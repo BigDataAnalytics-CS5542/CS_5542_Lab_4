@@ -41,23 +41,55 @@ pip install -r requirements.txt
 
 ### 5. Run the app
 
+**Option A — Streamlit only (UI):**
+
 ```bash
-streamlit run ui/app.py
+streamlit run ui/app.py --server.port 3000
 ```
+
+- UI: http://localhost:3000
+
+**Option B — Backend + frontend (UI talks to API):**  
+Start the FastAPI backend first, then in another terminal start Streamlit (see [Backend and frontend](#backend-and-frontend) below).
+
+---
+
+## Backend and frontend
+
+The **FastAPI backend** (`backend/main.py`) and **Streamlit frontend** (`ui/app.py`) can run together: the UI sends requests (e.g. to the `/echo` endpoint) to the API.
+
+**1. Run FastAPI (backend)** — from project root:
+
+```bash
+uvicorn backend.main:app --reload --port 3001
+```
+
+- API: http://127.0.0.1:3001  
+- Docs: http://127.0.0.1:3001/docs  
+
+**2. Run Streamlit (frontend)** — in another terminal, from project root:
+
+```bash
+streamlit run ui/app.py --server.port 3000
+```
+
+- UI: http://localhost:3000  
+
+In the UI, set the FastAPI base URL (default `http://127.0.0.1:3001`), enter a message, and click **Send to API** to test the link.
 
 ---
 
 ## Project structure
 
-| Path           | Description                    |
-|----------------|--------------------------------|
-| `backend/`     | RAG pipeline and API logic     |
-| `ui/`          | Streamlit frontend (`app.py`)  |
-| `data/`        | Documents, images, and logs    |
-| `data/data/docs/`   | Document storage (add your files here) |
-| `data/data/images/` | Image assets                   |
-| `data/logs/`   | Logs (e.g. query metrics)      |
-| `requirements.txt` | Python dependencies        |
+| Path               | Description                          |
+|--------------------|--------------------------------------|
+| `backend/`         | RAG pipeline and API logic (`main.py`) |
+| `ui/`              | Streamlit frontend (`app.py`)        |
+| `data/`            | Documents, images, and logs          |
+| `data/data/docs/`  | Document storage (add your files here) |
+| `data/data/images/`| Image assets                         |
+| `data/logs/`       | Logs (e.g. query metrics)            |
+| `requirements.txt` | Python dependencies                  |
 
 ---
 
@@ -65,3 +97,11 @@ streamlit run ui/app.py
 
 - **Logs:** The `data/logs/` folder is kept in the repo via `.gitkeep`. Generated files like `query_metrics.csv` are ignored (see `.gitignore`).
 - **Data:** Put your RAG documents in `data/data/docs/` and any images in `data/data/images/`.
+
+---
+
+## Common issues
+
+- Run all commands from the **project root** (the folder that contains `backend/` and `ui/`).
+- When using backend + frontend, start **FastAPI first**, then Streamlit, so the UI can reach the API.
+- If port 3000 or 3001 is in use, stop the other process or change the port (e.g. `uvicorn backend.main:app --reload --port 3002` and set the base URL in the UI accordingly).
