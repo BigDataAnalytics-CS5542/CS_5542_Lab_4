@@ -83,6 +83,19 @@ def evidence_supports_query(question: str, evidence_texts: List[str], min_hits: 
     return hits >= min_hits
 
 
+def pick_best_answer_evidence(question: str, evidence: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """Choose the evidence item that best matches the question by keyword overlap, then hybrid_score tie-break."""
+    qk = _keywords(question)
+    if not evidence or not qk:
+        return evidence[0] if evidence else None
+
+    def overlap(e: Dict[str, Any]) -> int:
+        t = (e.get("text") or "").lower()
+        return sum(1 for kw in qk if kw in t)
+
+    return max(evidence, key=lambda e: (overlap(e), e.get("hybrid_score", 0.0)))
+
+
 @dataclass(frozen=True)
 class Chunk:
     """A single text chunk from a PDF, with source and position metadata.
@@ -506,9 +519,15 @@ def run_hybrid_query(
         })
 
     evidence_texts = [e["text"] for e in evidence]
-    supported = evidence_supports_query(question, evidence_texts, min_hits=2)
+    qk = _keywords(question)
+    min_hits = 1 if len(qk) <= 3 else 2
+    supported = evidence_supports_query(question, evidence_texts, min_hits=min_hits)
     missing = (not hits) or (not supported)
-    answer = "Not enough evidence in the retrieved context." if missing else "OK"
+    best = pick_best_answer_evidence(question, evidence)
+    if missing:
+        answer = "Not enough evidence in the retrieved context."
+    else:
+        answer = (best["text"] if best else evidence[0]["text"])
 
     latency_ms = (time.time() - t0) * 1000
     return {
@@ -543,7 +562,44 @@ def ensure_indexes() -> None:
 if __name__ == "__main__":
     ensure_indexes()
 
-    q = "What is BM25 and how does it work?"
-    print("Top Hybrid hits:", retrieve_hybrid(q, top_k=5, alpha=0.6))
+    test_queries = [
+        # BM25 PRF (should hit bm25_prf.pdf)
+        "Explain BM25 length normalization and the difference between verbosity vs scope hypotheses.",
+        "What is the eliteness model and how does it relate to BM25?",
+        "What is BM25F and what does it change compared to BM25?",
+
+        # RAG evaluation (should hit rag_evaluation_ragas.pdf / benchmark paper)
+        "What metrics does RAGAS use to evaluate a RAG system (faithfulness, answer relevance, context relevance), and what do they mean?",
+        "What does faithfulness mean in RAG evaluation and why does it matter?",
+
+        # Chain-of-Retrieval (should hit chain_of_retrieval.pdf)
+        "What is Chain-of-Retrieval Augmented Generation and why does multi-step retrieval help?",
+        "Does Chain-of-Retrieval always help? What happens as chain length increases?",
+
+        # GraphFlow (should hit graphflow_rag.pdf)
+        "How does GraphFlow improve retrieval-augmented generation compared to vanilla RAG?",
+        "What benchmark does GraphFlow evaluate on and what is the main claim?",
+
+        # GFM-RAG (should hit gfm_rag.pdf)
+        "What is GFM-RAG and what problem is it trying to solve?",
+
+        # Off-topic / unanswerable (should be missing=True)
+        "What are the economic impacts of climate change?",
+        "Who won the 2024 Super Bowl?",
+    ]
+
+    for q in test_queries:
+        res = run_hybrid_query(q, top_k=5, alpha=0.6)
+
+        print("\n" + "=" * 90)
+        print("Q:", res["question"])
+        print(f"missing={res['missing_evidence_behavior']}  support_gate={res['support_gate_pass']}  latency_ms={res['latency_ms']:.2f}")
+        print("Answer:", res["answer"][:250].replace("\n", " "), "...")
+        print("\nTop evidence:")
+        for i, e in enumerate(res["evidence"], 1):
+            print(f"  {i}. {e['citation']}  h={e['hybrid_score']:.3f}  bm25={e['bm25_norm']:.3f}  dense={e['dense_norm']:.3f}")
+            print(f"     {e['text'][:180].replace('\\n',' ')}...")
+
+
 
 
