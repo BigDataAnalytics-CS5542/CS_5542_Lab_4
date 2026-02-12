@@ -95,7 +95,8 @@ def evaluate(
 
     Returns:
         List of result dicts with query_id, question, alpha, candidate_pool, top_k, num_gold,
-        p_at_5, r_at_10, missing_evidence, support_gate_pass, latency_ms, top1_evidence_id.
+        p_at_5, r_at_10, missing_evidence, support_gate_pass, latency_ms, top1_evidence_id,
+        unanswerable, reject_correct (True/False for unanswerable, None else), top1_correct_doc (answerable only).
     """
     gold_queries = load_gold()
 
@@ -105,7 +106,6 @@ def evaluate(
         question = q["question"]
         gold_ids = set(q.get("gold_evidence_ids", []))
 
-        # Run retrieval (we ask for top_k=10 so we can compute R@10)
         res = run_hybrid_query(
             question=question,
             top_k=top_k,
@@ -118,6 +118,15 @@ def evaluate(
         p5 = precision_at_k(retrieved_ids, gold_ids, k=5)
         r10 = recall_at_k(retrieved_ids, gold_ids, k=10)
 
+        is_unanswerable = len(gold_ids) == 0
+        missing = bool(res.get("missing_evidence_behavior"))
+        reject_correct = missing if is_unanswerable else None
+
+        top1_correct_doc = None
+        if not is_unanswerable and gold_ids and retrieved_ids:
+            expected_stem = list(gold_ids)[0].rsplit("_p", 1)[0] if "_p" in list(gold_ids)[0] else None
+            top1_correct_doc = expected_stem and retrieved_ids[0].startswith(expected_stem + "_p")
+
         rows.append(
             {
                 "query_id": query_id,
@@ -128,10 +137,13 @@ def evaluate(
                 "num_gold": len(gold_ids),
                 "p_at_5": round(p5, 4),
                 "r_at_10": round(r10, 4),
-                "missing_evidence": bool(res.get("missing_evidence_behavior")),
+                "missing_evidence": missing,
                 "support_gate_pass": bool(res.get("support_gate_pass")),
                 "latency_ms": round(float(res.get("latency_ms", 0.0)), 2),
                 "top1_evidence_id": (retrieved_ids[0] if retrieved_ids else ""),
+                "unanswerable": is_unanswerable,
+                "reject_correct": reject_correct,
+                "top1_correct_doc": top1_correct_doc,
             }
         )
 
@@ -160,22 +172,43 @@ def write_csv(rows: List[Dict[str, Any]], out_path: Path = OUT_CSV) -> None:
 
 
 def print_summary(rows: List[Dict[str, Any]]) -> None:
-    """Print aggregate metrics (avg P@5, avg R@10, missing-evidence count) and one line per query."""
-    avg_p5 = sum(r["p_at_5"] for r in rows) / len(rows)
-    avg_r10 = sum(r["r_at_10"] for r in rows) / len(rows)
-    missing_cnt = sum(1 for r in rows if r["missing_evidence"])
+    """Print aggregate metrics (avg P@5, avg R@10 over answerable; reject accuracy for unanswerable)."""
+    answerable = [r for r in rows if r["num_gold"] > 0]
+    n_ans = len(answerable)
+    if n_ans > 0:
+        avg_p5 = sum(r["p_at_5"] for r in answerable) / n_ans
+        avg_r10 = sum(r["r_at_10"] for r in answerable) / n_ans
+    else:
+        avg_p5 = avg_r10 = 0.0
+
+    unans = [r for r in rows if r["unanswerable"]]
+    if unans:
+        reject_acc = sum(1 for r in unans if r["reject_correct"]) / len(unans)
+    else:
+        reject_acc = None
+
+    top1_ok = [r for r in answerable if r.get("top1_correct_doc") is True]
+    top1_ok_rate = len(top1_ok) / n_ans if n_ans else None
 
     print("\n=== Evaluation Summary ===")
-    print(f"Queries: {len(rows)}")
-    print(f"Avg P@5:  {avg_p5:.4f}")
-    print(f"Avg R@10: {avg_r10:.4f}")
-    print(f"Missing-evidence flagged: {missing_cnt}/{len(rows)}")
+    print(f"Queries: {len(rows)}  (answerable: {n_ans}, unanswerable: {len(unans)})")
+    print(f"Avg P@5 (answerable only):  {avg_p5:.4f}")
+    print(f"Avg R@10 (answerable only): {avg_r10:.4f}")
+    if top1_ok_rate is not None:
+        print(f"Top-1 from correct doc (answerable): {len(top1_ok)}/{n_ans} = {top1_ok_rate:.4f}")
+    if unans:
+        print(f"Reject accuracy (unanswerable): {reject_acc:.4f}  (Q5 handled separately)")
     print(f"CSV written to: {OUT_CSV}\n")
 
     for r in rows:
+        extra = ""
+        if r.get("top1_correct_doc") is not None:
+            extra = f"  top1_ok={r['top1_correct_doc']}"
+        if r["unanswerable"]:
+            extra = f"  reject_correct={r['reject_correct']}"
         print(
             f"{r['query_id']}  P@5={r['p_at_5']:.4f}  R@10={r['r_at_10']:.4f}  "
-            f"missing={r['missing_evidence']}  ms={r['latency_ms']:.2f}  top1={r['top1_evidence_id']}"
+            f"missing={r['missing_evidence']}  ms={r['latency_ms']:.2f}  top1={r['top1_evidence_id']}{extra}"
         )
 
 
