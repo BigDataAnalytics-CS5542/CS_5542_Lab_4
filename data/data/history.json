@@ -1,0 +1,189 @@
+{
+  "123": [
+    {
+      "question": "Explain bm25",
+      "top_k": 5,
+      "alpha": 0.6,
+      "latency_ms": 1350.3360748291016,
+      "evidence": [
+        {
+          "evidence_id": "bm25_prf_p39_c002",
+          "hybrid_score": 1.0,
+          "bm25_norm": 1.0,
+          "dense_norm": 1.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 39,
+          "text": "the user would unconsciouslycorrect the query by adding terms to it that disambiguate it. This does not mean that all queries and documents are position-proof, but the fraction that require positions is small. Second, it should be noted that taking into account the structure of a document (e.g., in BM25F) implicitly rewards prox- imity within important short streams, such as the title. 3.9 Open Source Implementations of BM25 and BM25F We review here several implementations of BM25 and BM25F available as open source. This list is not exhaustive, there may be other search engines or extensions o",
+          "citation": "(bm25_prf.pdf p39, chunk 2)"
+        },
+        {
+          "evidence_id": "bm25_prf_p31_c001",
+          "hybrid_score": 0.851856759220851,
+          "bm25_norm": 0.7704242466091058,
+          "dense_norm": 0.9061451009620144,
+          "source_file": "bm25_prf.pdf",
+          "page": 31,
+          "text": "3.6 Multiple Streams and BM25F 361 circumstances. However, there is also evidence that optimal values do depend on other factors (such as the type of documents or queries). 3.5.1 Some V ariations on BM25 Published versions of BM25 can vary somewhat (the original BM25 [46] was a little more complicated than that of Equation (3.15), for example). Here we indicate some di\ufb00erences that might be encountered in di\ufb00erent versions of the function in published sources. \u2022 The original had a component for within-query term fre- quency qtf , for longer queries where a term might occur mul- tiple times. In",
+          "citation": "(bm25_prf.pdf p31, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p40_c001",
+          "hybrid_score": 0.8258188142452992,
+          "bm25_norm": 0.7989056686146973,
+          "dense_norm": 0.8437609113323672,
+          "source_file": "bm25_prf.pdf",
+          "page": 40,
+          "text": "370 Derived Models but there exist a third party Lucene extensions that implement BM25 and BM25F [38]. We inspected the code of all these implementations and we believe they are correct. 1 (inspection was visual: we did not run tests ourselves; in two cases implementation was incorrect and we asked the authors to correct it, which they did). None of the systems above provide support for parameter optimisation, although it should not be di\ufb03cult to extend them for this. 1 There are some minor di\ufb00erences in BM25 implementations in these packages at the time of writing this survey. For example, PF",
+          "citation": "(bm25_prf.pdf p40, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p27_c001",
+          "hybrid_score": 0.8135478484403764,
+          "bm25_norm": 0.849263086118427,
+          "dense_norm": 0.7897376899883428,
+          "source_file": "bm25_prf.pdf",
+          "page": 27,
+          "text": "3.4 The Eliteness Model and BM25 357 3.4.4 BM25 Precursor We investigate the shape of the saturation function a little more closely. It is clear that the properties listed above severely limit the possible functions; nevertheless, there remain many possibilities, as illustrated for example in the left-hand graph in Figure 3.2. However, the 2-Poisson model generates much smoother functions, as shown in the right-hand graph. For most realistic combinations of the parameters the curve is convex, as the top two lines; for some combinations it has an initial concavity, as the bottom line. The next ",
+          "citation": "(bm25_prf.pdf p27, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p30_c001",
+          "hybrid_score": 0.7338812819603647,
+          "bm25_norm": 0.849263086118427,
+          "dense_norm": 0.6569600791883232,
+          "source_file": "bm25_prf.pdf",
+          "page": 30,
+          "text": "360 Derived Models tf , before applying the saturation function, as follows: tf \u2032 = tf B (3.13) wBM25 i (tf )= tf \u2032 k1 + tf \u2032 wRSJ i (3.14) = tf k1 ( (1 \u2212 b)+ b dl avdl ) + tf wRSJ i (3.15) This is the classic BM25 term-weighting and document-scoring func- tion. As with all term-document weights de\ufb01ned in this survey, the full document score is obtained by summing these term-weights over the (original or expanded) set of query terms. 3.5 Uses of BM25 In order to use BM25 as a ranking function for retrieval, we need to choose values for the internal parametersb and k 1, and also instantiate RSJ",
+          "citation": "(bm25_prf.pdf p30, chunk 1)"
+        }
+      ],
+      "missing_evidence_behavior": true,
+      "support_gate_pass": false,
+      "answer": "Not enough evidence in the retrieved context."
+    },
+    {
+      "question": "Explain france",
+      "top_k": 5,
+      "alpha": 0.6,
+      "latency_ms": 45.29428482055664,
+      "evidence": [
+        {
+          "evidence_id": "bm25_prf_p12_c001",
+          "hybrid_score": 0.8287282875305225,
+          "bm25_norm": 0.5718207188263063,
+          "dense_norm": 1.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 12,
+          "text": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr",
+          "citation": "(bm25_prf.pdf p12, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p22_c002",
+          "hybrid_score": 0.6116420085695304,
+          "bm25_norm": 0.752282790956296,
+          "dense_norm": 0.5178814869783532,
+          "source_file": "bm25_prf.pdf",
+          "page": 22,
+          "text": "We suppose that for any document-term pair, there is a hidden property which we refer to as eliteness. This can be interpreted as a form of aboutness: if the term is elite in the document, in some sense the document isabout the concept denoted by the term. Now we assume that actual occurrences of the term in the document depend on eliteness, and that there may be an association between eliteness (to the term) and relevance (to the query). But we further assume that these relations are enough to explain the association between term frequency tf and relevance to the query \u2014 that is, given the tw",
+          "citation": "(bm25_prf.pdf p22, chunk 2)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p12_c003",
+          "hybrid_score": 0.5851215519066575,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.9752025865110959,
+          "source_file": "graphflow_rag.pdf",
+          "page": 12,
+          "text": "[31] Thomas N Kipf and Max Welling. Semi-supervised classification with graph convolutional networks. In International Conference on Learning Representations, 2017. [32] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, LJ Miranda, Bill Yuchen Lin, Khyathi Chandu, Nouha Dziri, Sachin Kumar, Tom Zick, Yejin Choi, et al. Rewardbench: Evaluating reward models for language modeling. arXiv preprint arXiv:2403.13787, 2024. [33] Meng-Chieh Lee, Qi Zhu, Costas Mavromatis, Zhen Han, Soji Adeshina, Vassilis N Ioannidis, Huzefa Rangwala, and Christos Faloutsos. Hybgrag: Hybrid retrieval-augmented genera",
+          "citation": "(graphflow_rag.pdf p12, chunk 3)"
+        },
+        {
+          "evidence_id": "gfm_rag_p11_c001",
+          "hybrid_score": 0.5513447188454892,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.918907864742482,
+          "source_file": "gfm_rag.pdf",
+          "page": 11,
+          "text": "Acknowledgments G Haffari is partly supported by the ARC Future Fellowship FT190100039 and DARPA Assured Neuro Symbolic Learning and Reasoning (ANSR) program under award number FA8750-23-2-1016. C Gong is supported by NSF of China (Nos: 62336003, 12371510). D Phung is supported by the Australian Research Council (ARC) Discovery Project DP250100262 and DP230101176. S Pan was partly funded by Australian Research Council (ARC) under grants FT210100097 and DP240101547 and the CSIRO \u2013 National Science Foundation (US) AI Research Collaboration Program. References [1] Gabor Angeli, Melvin Jose Johnso",
+          "citation": "(gfm_rag.pdf p11, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p16_c002",
+          "hybrid_score": 0.4958148075943476,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.8263580126572461,
+          "source_file": "gfm_rag.pdf",
+          "page": 16,
+          "text": "Antoine Bosselut, Percy Liang, and Jure Leskovec. Qa-gnn: Reasoning with language models and knowledge graphs for question answering. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 535\u2013546, 2021. [74] Alexandros Zeakis, George Papadakis, Dimitrios Skoutas, and Manolis Koubarakis. Pre- trained embeddings for entity resolution: an experimental analysis. Proceedings of the VLDB Endowment, 16(9):2225\u20132238, 2023. [75] Xinyu Zhang, Nandan Thakur, Odunayo Ogundepo, Ehsan Kamalloo, David Alfonso-H",
+          "citation": "(gfm_rag.pdf p16, chunk 2)"
+        }
+      ],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "answer": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr"
+    }
+  ],
+  "ONETWOTHREE": [
+    {
+      "question": "Explain france",
+      "top_k": 5,
+      "alpha": 0.6,
+      "latency_ms": 41.0313606262207,
+      "evidence": [
+        {
+          "evidence_id": "bm25_prf_p12_c001",
+          "hybrid_score": 0.8287282875305225,
+          "bm25_norm": 0.5718207188263063,
+          "dense_norm": 1.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 12,
+          "text": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr",
+          "citation": "(bm25_prf.pdf p12, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p22_c002",
+          "hybrid_score": 0.6116420085695304,
+          "bm25_norm": 0.752282790956296,
+          "dense_norm": 0.5178814869783532,
+          "source_file": "bm25_prf.pdf",
+          "page": 22,
+          "text": "We suppose that for any document-term pair, there is a hidden property which we refer to as eliteness. This can be interpreted as a form of aboutness: if the term is elite in the document, in some sense the document isabout the concept denoted by the term. Now we assume that actual occurrences of the term in the document depend on eliteness, and that there may be an association between eliteness (to the term) and relevance (to the query). But we further assume that these relations are enough to explain the association between term frequency tf and relevance to the query \u2014 that is, given the tw",
+          "citation": "(bm25_prf.pdf p22, chunk 2)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p12_c003",
+          "hybrid_score": 0.5851215519066575,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.9752025865110959,
+          "source_file": "graphflow_rag.pdf",
+          "page": 12,
+          "text": "[31] Thomas N Kipf and Max Welling. Semi-supervised classification with graph convolutional networks. In International Conference on Learning Representations, 2017. [32] Nathan Lambert, Valentina Pyatkin, Jacob Morrison, LJ Miranda, Bill Yuchen Lin, Khyathi Chandu, Nouha Dziri, Sachin Kumar, Tom Zick, Yejin Choi, et al. Rewardbench: Evaluating reward models for language modeling. arXiv preprint arXiv:2403.13787, 2024. [33] Meng-Chieh Lee, Qi Zhu, Costas Mavromatis, Zhen Han, Soji Adeshina, Vassilis N Ioannidis, Huzefa Rangwala, and Christos Faloutsos. Hybgrag: Hybrid retrieval-augmented genera",
+          "citation": "(graphflow_rag.pdf p12, chunk 3)"
+        },
+        {
+          "evidence_id": "gfm_rag_p11_c001",
+          "hybrid_score": 0.5513447188454892,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.918907864742482,
+          "source_file": "gfm_rag.pdf",
+          "page": 11,
+          "text": "Acknowledgments G Haffari is partly supported by the ARC Future Fellowship FT190100039 and DARPA Assured Neuro Symbolic Learning and Reasoning (ANSR) program under award number FA8750-23-2-1016. C Gong is supported by NSF of China (Nos: 62336003, 12371510). D Phung is supported by the Australian Research Council (ARC) Discovery Project DP250100262 and DP230101176. S Pan was partly funded by Australian Research Council (ARC) under grants FT210100097 and DP240101547 and the CSIRO \u2013 National Science Foundation (US) AI Research Collaboration Program. References [1] Gabor Angeli, Melvin Jose Johnso",
+          "citation": "(gfm_rag.pdf p11, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p16_c002",
+          "hybrid_score": 0.4958148075943476,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.8263580126572461,
+          "source_file": "gfm_rag.pdf",
+          "page": 16,
+          "text": "Antoine Bosselut, Percy Liang, and Jure Leskovec. Qa-gnn: Reasoning with language models and knowledge graphs for question answering. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 535\u2013546, 2021. [74] Alexandros Zeakis, George Papadakis, Dimitrios Skoutas, and Manolis Koubarakis. Pre- trained embeddings for entity resolution: an experimental analysis. Proceedings of the VLDB Endowment, 16(9):2225\u20132238, 2023. [75] Xinyu Zhang, Nandan Thakur, Odunayo Ogundepo, Ehsan Kamalloo, David Alfonso-H",
+          "citation": "(gfm_rag.pdf p16, chunk 2)"
+        }
+      ],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "answer": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr"
+    }
+  ]
+}
