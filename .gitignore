@@ -1,0 +1,14 @@
+# Dependencies & env
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+
+# Keep logs/ folder (logs/.gitkeep is tracked); only ignore generated CSV
+logs/query_metrics.csv
