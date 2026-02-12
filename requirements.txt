@@ -5,3 +5,8 @@ pydantic
 requests
 pandas
 numpy
+pypdf
+rank-bm25
+sentence-transformers
+scikit-learn
+torch

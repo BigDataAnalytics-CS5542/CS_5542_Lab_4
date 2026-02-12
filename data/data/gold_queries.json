@@ -1,0 +1,27 @@
+[
+  {
+    "query_id": "Q1",
+    "question": "Explain BM25 length normalization and the difference between verbosity vs scope hypotheses.",
+    "gold_evidence_ids": ["bm25_prf_p29_c001", "bm25_prf_p29_c002", "bm25_prf_p28_c002"]
+  },
+  {
+    "query_id": "Q2",
+    "question": "What metrics does RAGAS use to evaluate a RAG system (e.g., faithfulness, context precision/recall), and what do they mean?",
+    "gold_evidence_ids": ["rag_evaluation_ragas_p03_c001", "rag_evaluation_ragas_p05_c002", "rag_evaluation_ragas_p05_c001"]
+  },
+  {
+    "query_id": "Q3",
+    "question": "What is Chain-of-Retrieval Augmented Generation and why does multi-step retrieval help?",
+    "gold_evidence_ids": ["chain_of_retrieval_p01_c001", "chain_of_retrieval_p03_c001", "chain_of_retrieval_p04_c002"]
+  },
+  {
+    "query_id": "Q4",
+    "question": "How does GraphFlow improve retrieval-augmented generation using graphs compared to vanilla RAG?",
+    "gold_evidence_ids": ["graphflow_rag_p01_c001", "graphflow_rag_p01_c002", "graphflow_rag_p09_c003", "graphflow_rag_p10_c003"]
+  },
+  {
+    "query_id": "Q5",
+    "question": "What are the economic impacts of climate change?",
+    "gold_evidence_ids": []
+  }
+]

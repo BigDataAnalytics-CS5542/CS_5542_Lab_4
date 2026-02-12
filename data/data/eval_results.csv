@@ -1,0 +1,6 @@
+query_id,question,alpha,candidate_pool,top_k,num_gold,p_at_5,r_at_10,missing_evidence,support_gate_pass,latency_ms,top1_evidence_id
+Q1,Explain BM25 length normalization and the difference between verbosity vs scope hypotheses.,0.6,50,10,3,0.6,1.0,False,True,57.45,bm25_prf_p29_c001
+Q2,"What metrics does RAGAS use to evaluate a RAG system (e.g., faithfulness, context precision/recall), and what do they mean?",0.6,50,10,3,0.4,1.0,False,True,27.61,rag_evaluation_ragas_p05_c003
+Q3,What is Chain-of-Retrieval Augmented Generation and why does multi-step retrieval help?,0.6,50,10,3,0.4,1.0,False,True,27.12,chain_of_retrieval_p03_c001
+Q4,How does GraphFlow improve retrieval-augmented generation using graphs compared to vanilla RAG?,0.6,50,10,4,0.8,1.0,False,True,27.93,graphflow_rag_p01_c002
+Q5,What are the economic impacts of climate change?,0.6,50,10,0,0.0,0.0,True,False,28.22,gfm_rag_p32_c003

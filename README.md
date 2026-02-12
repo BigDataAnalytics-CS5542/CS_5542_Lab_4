@@ -49,7 +49,7 @@ streamlit run ui/app.py --server.port 3000
 
 - UI: http://localhost:3000
 
-**Option B — Backend + frontend (UI talks to API):**  
+**Option B — Backend + frontend (UI talks to API):**
 Start the FastAPI backend first, then in another terminal start Streamlit (see [Backend and frontend](#backend-and-frontend) below).
 
 ---
@@ -64,8 +64,8 @@ The **FastAPI backend** (`backend/main.py`) and **Streamlit frontend** (`ui/app.
 uvicorn backend.main:app --reload --port 3001
 ```
 
-- API: http://127.0.0.1:3001  
-- Docs: http://127.0.0.1:3001/docs  
+- API: http://127.0.0.1:3001
+- Docs: http://127.0.0.1:3001/docs
 
 **2. Run Streamlit (frontend)** — in another terminal, from project root:
 
@@ -73,7 +73,7 @@ uvicorn backend.main:app --reload --port 3001
 streamlit run ui/app.py --server.port 3000
 ```
 
-- UI: http://localhost:3000  
+- UI: http://localhost:3000
 
 In the UI, set the FastAPI base URL (default `http://127.0.0.1:3001`), enter a message, and click **Send to API** to test the link.
 
