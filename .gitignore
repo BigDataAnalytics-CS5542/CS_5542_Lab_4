@@ -11,4 +11,4 @@ __pycache__/
 .DS_Store
 
 # Keep logs/ folder (logs/.gitkeep is tracked); only ignore generated CSV
-logs/query_metrics.csv
+# logs/query_metrics.csv

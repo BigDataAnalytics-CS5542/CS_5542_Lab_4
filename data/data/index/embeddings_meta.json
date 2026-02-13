@@ -407,6 +407,15 @@
     "rag_evaluation_ragas_p07_c002",
     "rag_evaluation_ragas_p08_c001",
     "rag_evaluation_ragas_p08_c002",
-    "rag_evaluation_ragas_p08_c003"
+    "rag_evaluation_ragas_p08_c003",
+    "img_bm25_prf_table3_1",
+    "img_chain_of_retrieval_fig1_example",
+    "img_chain_of_retrieval_fig2_overview",
+    "img_chain_of_retrieval_fig3_scaling",
+    "img_gfm_rag_framework",
+    "img_gfm_rag_results_table",
+    "img_graphflow_rag_p04_architecture",
+    "img_graphflow_rag_p25_training_dynamics",
+    "img_ragas_table1_metrics"
   ]
 }
