@@ -1,5 +1,13 @@
 # CS 5542 — Lab 4
 
+
+## Dataset Description
+
+
+## Deployment Link
+https://nurturing-manifestation-production-01d4.up.railway.app/
+
+
 RAG (Retrieval-Augmented Generation) app with a Streamlit UI and optional FastAPI backend.
 
 ---
@@ -123,3 +131,9 @@ This deploys the **FastAPI backend** (RAG API). To deploy the **Streamlit fronte
 - Run all commands from the **project root** (the folder that contains `backend/` and `ui/`).
 - When using backend + frontend, start **FastAPI first**, then Streamlit, so the UI can reach the API.
 - If port 3000 or 3001 is in use, stop the other process or change the port (e.g. `uvicorn backend.main:app --reload --port 3002` and set the base URL in the UI accordingly).
+
+
+
+
+
+# Results Snapshots

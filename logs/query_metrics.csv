@@ -1,2 +1,4 @@
 timestamp,query_id,retrieval_mode,top_k,latency_ms,Precision@5,Recall@10,evidence_ids_returned,faithfulness_pass,missing_evidence_behavior
 1770956678.5599377,Explain bm25 normalization,Hybrid,5,2497.962713241577,,,bm25_prf_p27_c001;bm25_prf_p31_c001;img_bm25_prf_table3_1;bm25_prf_p39_c002;bm25_prf_p51_c002,False,True
+1770959864.3727038,Explain bm25 normalization,hybrid,5,4022.99427986145,,,bm25_prf_p27_c001;bm25_prf_p31_c001;img_bm25_prf_table3_1;bm25_prf_p39_c002;bm25_prf_p51_c002,False,True
+1770959998.7819374,How do graphs relate to RAG?,hybrid,5,115.97990989685059,,,graphflow_rag_p28_c001;gfm_rag_p03_c002;img_graphflow_rag_p04_architecture;gfm_rag_p27_c001;img_graphflow_rag_p25_training_dynamics,True,False
