@@ -100,6 +100,20 @@ In the UI, set the FastAPI base URL (default `http://127.0.0.1:3001`), enter a m
 
 ---
 
+## Deploy to Railway
+
+1. **Create a new project** at [railway.app](https://railway.app) and connect your GitHub repo.
+2. **Deploy** — Railway auto-detects the Python app and uses `Procfile` / `railway.json` for the start command.
+3. **Generate a domain** — In the service Settings → Networking, click **Generate Domain** to get a public URL.
+
+This deploys the **FastAPI backend** (RAG API). To use the full app, either:
+- Run Streamlit locally and set the API URL in the sidebar to your deployed backend URL, or
+- Add a second Railway service with start command: `streamlit run ui/app.py --server.port $PORT --server.address 0.0.0.0` and set the `API_URL` variable to your backend's public URL.
+
+**Note:** The first build may take 5–10 minutes due to PyTorch and sentence-transformers. The repo uses CPU-only torch to reduce build size; if it still times out, try switching to a [Dockerfile](https://docs.railway.com/builds/dockerfiles) with a multi-stage build.
+
+---
+
 ## Common issues
 
 - Run all commands from the **project root** (the folder that contains `backend/` and `ui/`).
