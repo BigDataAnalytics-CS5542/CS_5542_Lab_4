@@ -163,3 +163,23 @@ This deploys the **FastAPI backend** (RAG API). To deploy the **Streamlit fronte
 ### Type: Hybrid
 "What are the economic impacts of climate change?",
 ![alt text](image-8.png)
+
+
+
+# RAG System Failure Cases
+
+### 1. Retrieval Failure
+Description: System fails to retrieve relevant GraphFlow papers when user queries "how do neural networks process information through graph structures," instead returning generic graph neural network papers that don't address the flow mechanisms.
+Root cause: Semantic mismatch between query terminology and paper vocabulary—GraphFlow papers use specialized terms like "message propagation dynamics" and "node activation cascading" rather than general phrases like "process information."
+Proposed fix: Implement query expansion using domain-specific synonyms and related terms extracted from the dataset's key phrases; add a reranking step that prioritizes papers containing core methodology names (GraphFlow, Chain of Retrieval, GFM, RAG) when detected in query context.
+
+### 2. Grounding/Missing-Evidence Failure
+Description: When asked "what benchmarks show GFM outperforming traditional RAG," the system retrieves chunks discussing GFM methodology and separate chunks mentioning RAG applications, but none containing direct performance comparisons, leaving the question unanswerable from the retrieved evidence.
+Root cause: Relevant comparative benchmark information exists across multiple papers or in specific results sections, but the chunking strategy fragments tables and experimental results; retrieval focuses on semantic similarity to individual concepts (GFM, RAG) rather than retrieving chunks containing comparative analysis or benchmark tables that mention both methods together.
+Proposed fix: Implement table-aware chunking that keeps experimental results and benchmark tables intact as single retrievable units; use a multi-query retrieval strategy that explicitly searches for comparative terms like "outperform," "versus," "compared to" alongside the method names; increase the number of retrieved chunks and add a re-ranking step that prioritizes chunks containing multiple target entities (both GFM and RAG) and quantitative metrics.
+
+
+
+# Reflection 
+
+This RAG system demonstrates that effective retrieval requires strategic chunking and multi-faceted queries to surface comparative evidence for complex research questions. The FastAPI + Streamlit architecture enables a project dashboard that logs retrieval performance metrics, give a history of past queries and their results, and allows real-time experimentation with dense vs sparse retrieval strategies and k parameters. Comprehensive logging reveals when retrieved chunks lack comparative evidence, which would directly inform improvements to chunking strategies and retrieval configurations in future expansions.
