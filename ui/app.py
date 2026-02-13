@@ -17,13 +17,13 @@ st.set_page_config(
 CSS = """
 <style>
     .answer-card {
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
+        background: #1e1e2e;
+        border: 1px solid #383850;
         border-radius: 8px;
         padding: 1.2rem 1.5rem;
         line-height: 1.75;
         font-size: 1.05rem;
-        color: #1a1a1a;
+        color: #e0e0e0;
     }
     button[kind="primary"] {
         background-color: #16a34a !important;
@@ -57,6 +57,15 @@ CSS = """
         color: #92400e;
         font-weight: 500;
         margin-bottom: 1rem;
+    }
+    /* Hide the built-in "Press Enter to Apply" tooltip */
+    div[data-testid="InputInstructions"] {
+        display: none !important;
+    }
+    /* Remove the form border */
+    div[data-testid="stForm"] {
+        border: none !important;
+        padding: 0 !important;
     }
 </style>
 """
@@ -138,12 +147,12 @@ def render_answer_component(answer_text: str) -> None:
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
         body {{
             font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1a1a1a;
+            color: #e0e0e0;
             padding: 0;
         }}
         .answer-card {{
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background: #1e1e2e;
+            border: 1px solid #383850;
             border-radius: 8px;
             padding: 1.2rem 1.5rem;
             line-height: 1.75;
@@ -172,7 +181,7 @@ def render_answer_component(answer_text: str) -> None:
             padding: 1px 0;
         }}
         .cite-region.highlight {{
-            background: #fef08a;
+            background: #854d0e;
         }}
     </style>
     </head>
@@ -234,15 +243,16 @@ with st.sidebar:
 st.title("CS 5542 \u2014 RAG Chatbot")
 st.caption("Ask a question and get an evidence-grounded answer from the document collection.")
 
-col_input, col_button = st.columns([5, 1])
-with col_input:
-    query_text = st.text_input(
-        "Your question",
-        placeholder="e.g. Explain BM25 length normalization...",
-        label_visibility="collapsed",
-    )
-with col_button:
-    ask_clicked = st.button("Ask", type="primary", use_container_width=True)
+with st.form("query_form", clear_on_submit=False):
+    col_input, col_button = st.columns([5, 1])
+    with col_input:
+        query_text = st.text_input(
+            "Your question",
+            placeholder="e.g. Explain BM25 length normalization...",
+            label_visibility="collapsed",
+        )
+    with col_button:
+        ask_clicked = st.form_submit_button("Ask", type="primary", use_container_width=True)
 
 # ── Handle query submission ─────────────────────────────────────────────
 if ask_clicked and query_text.strip():
@@ -250,11 +260,12 @@ if ask_clicked and query_text.strip():
         try:
             result = call_query_api(api_url, query_text.strip(), top_k, alpha, user_id)
             st.session_state.current_result = result
-            # Refresh history (best-effort)
+            # Refresh history so the sidebar updates immediately
             try:
                 st.session_state.history = fetch_history(api_url, user_id)
             except Exception:
                 pass
+            st.rerun()
         except requests.exceptions.ConnectionError:
             st.error(
                 f"Cannot connect to the API at {api_url}. "
