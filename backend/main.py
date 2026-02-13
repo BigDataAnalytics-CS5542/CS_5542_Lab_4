@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from typing import List, Dict, Any
 from pydantic import BaseModel
 from backend.rag_pipeline import run_hybrid_query
+from backend.json_to_csv import process_json_to_csv
 import json
 
 app = FastAPI(title="CS 5542 Demo API")
@@ -40,24 +41,6 @@ def get_history(userID:str):
         return []
     
 
-'''
-**E. Automatic Logging (Required)**
-Each query must append one row to:
-logs/query_metrics.csv
-If the file does not exist, the application must create it automatically.
-Columns:
-
-TODO: - timestamp
-- query_id
-TODO: - retrieval_mode
-- top_k
-- latency_ms
-TODO: - Precision@
-TODO: - Recall@
-- evidence_ids_returned
-- faithfulness_pass
-- missing_evidence_behavior
-'''
 def write_query_metrics(results):
     print()
 
@@ -68,16 +51,13 @@ def log_results(userID, results):
     history[userID] += [results]
     save_history()
 
+
 def run_query(userID, query, top_k, alpha):
     results = run_hybrid_query(question=query, top_k=top_k, alpha=alpha)
     log_results(userID=userID, results=results)
+    process_json_to_csv(results)
     return results
     
-
-
-def generate_answer(query, evidence):
-    ''' TODO: call llm to format answer. '''
-    print()
 
 
 

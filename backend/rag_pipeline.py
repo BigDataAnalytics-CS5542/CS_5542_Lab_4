@@ -534,6 +534,7 @@ def run_hybrid_query(
         "question": question,
         "top_k": top_k,
         "alpha": alpha,
+        "timestamp": t0,
         "latency_ms": latency_ms,
         "evidence": evidence,
         "missing_evidence_behavior": missing,

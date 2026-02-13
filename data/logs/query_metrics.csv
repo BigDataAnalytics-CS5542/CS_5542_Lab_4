@@ -1,0 +1,2 @@
+timestamp,query_id,retrieval_mode,top_k,latency_ms,Precision@5,Recall@10,evidence_ids_returned,faithfulness_pass,missing_evidence_behavior
+1770950555.6679301,Explain bm25 norm,hybrid,5,3385.4265213012695,,,bm25_prf_p27_c001;bm25_prf_p31_c001;bm25_prf_p39_c002;bm25_prf_p35_c001;bm25_prf_p51_c002,False,True
