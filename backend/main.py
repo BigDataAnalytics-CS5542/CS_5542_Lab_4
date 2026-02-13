@@ -100,7 +100,7 @@ Not enough evidence in the retrieved context.
 '''
 
 @app.get("/history")
-def history(userID:str) -> list[Dict[str,Any]]:
+def history_hook(userID:str) -> list[Dict[str,Any]]:
     return get_history(userID=userID)
 
 @app.post("/query")
