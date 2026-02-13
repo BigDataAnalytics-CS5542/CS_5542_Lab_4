@@ -2,7 +2,7 @@
 
 
 ## Dataset Description
-
+This dataset comprises a curated collection of research papers and associated visual materials focused on advanced information retrieval and knowledge graph methodologies. It includes scholarly work on GraphFlow (graph-based information flow techniques), Chain of Retrieval (sequential retrieval strategies), GFM (Graph Foundation Models), and RAG (Retrieval-Augmented Generation) systems. The collection contains both textual content from peer-reviewed publications and technical diagrams, architectural illustrations, and experimental result visualizations that demonstrate these methods' performance and design. This resource would be valuable for researchers and practitioners exploring the intersection of graph-based reasoning, multi-step retrieval processes, and LLM-enhanced information access systems.
 
 ## Deployment Link
 https://nurturing-manifestation-production-01d4.up.railway.app/
