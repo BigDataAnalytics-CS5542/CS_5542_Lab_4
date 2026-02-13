@@ -1,123 +1,125 @@
 {
   "default_user": [
     {
-      "question": "How does rag work?",
+      "question": "Explain bm25 normalization",
       "top_k": 5,
-      "retrieval_mode": "hybrid",
+      "retrieval_mode": "Hybrid",
       "use_multimodal": true,
       "alpha": 0.6,
-      "timestamp": 1770955298.29685,
-      "latency_ms": 1791.4800643920898,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770956678.5599377,
+      "latency_ms": 2497.962713241577,
       "evidence": [
         {
-          "evidence_id": "gfm_rag_p07_c001",
-          "hybrid_score": 0.791021858814533,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.6517030980242215,
-          "source_file": "gfm_rag.pdf",
-          "page": 7,
-          "text": "4 Experiment In experiments, we aim to address the following research questions: (1) How doesGFM-RAG perform in multi-hop retrieval and QA tasks? (Sections 4.2 and 4.3); (2) What are the efficiency and effectiveness of GFM-RAG in multi-hop retrieval? (Section 4.4); (3) How well does GFM-RAG generalize to unseen datasets as a foundation model? (Section 4.6); (4) How does the performance of GFM-RAG scale with training as a foundation model? (Section 4.7); (5) How to interpret GFM-RAG in multi-hop reasoning? (Section 4.8). 4.1 Experimental Setup Datasets. We first evaluate the effectiveness ofGFM",
-          "citation": "(gfm_rag.pdf p7, chunk 1)"
-        },
-        {
-          "evidence_id": "img_gfm_rag_framework",
-          "hybrid_score": 0.6,
-          "bm25_norm": 0.0,
+          "evidence_id": "bm25_prf_p27_c001",
+          "hybrid_score": 0.9389079078592424,
+          "bm25_norm": 0.847269769648106,
           "dense_norm": 1.0,
-          "source_file": "gfm_rag_framework.png",
-          "page": 0,
-          "text": "gfm rag framework",
-          "citation": "(image: gfm_rag_framework.png)"
+          "source_file": "bm25_prf.pdf",
+          "page": 27,
+          "text": "3.4 The Eliteness Model and BM25 357 3.4.4 BM25 Precursor We investigate the shape of the saturation function a little more closely. It is clear that the properties listed above severely limit the possible functions; nevertheless, there remain many possibilities, as illustrated for example in the left-hand graph in Figure 3.2. However, the 2-Poisson model generates much smoother functions, as shown in the right-hand graph. For most realistic combinations of the parameters the curve is convex, as the top two lines; for some combinations it has an initial concavity, as the bottom line. The next ",
+          "citation": "(bm25_prf.pdf p27, chunk 1)"
         },
         {
-          "evidence_id": "img_gfm_rag_results_table",
-          "hybrid_score": 0.4674227552826091,
-          "bm25_norm": 0.0,
-          "dense_norm": 0.7790379254710152,
-          "source_file": "gfm_rag_results_table.png",
-          "page": 0,
-          "text": "gfm rag results table",
-          "citation": "(image: gfm_rag_results_table.png)"
+          "evidence_id": "bm25_prf_p31_c001",
+          "hybrid_score": 0.8620176997861977,
+          "bm25_norm": 0.7677777237998076,
+          "dense_norm": 0.9248443504437911,
+          "source_file": "bm25_prf.pdf",
+          "page": 31,
+          "text": "3.6 Multiple Streams and BM25F 361 circumstances. However, there is also evidence that optimal values do depend on other factors (such as the type of documents or queries). 3.5.1 Some V ariations on BM25 Published versions of BM25 can vary somewhat (the original BM25 [46] was a little more complicated than that of Equation (3.15), for example). Here we indicate some di\ufb00erences that might be encountered in di\ufb00erent versions of the function in published sources. \u2022 The original had a component for within-query term fre- quency qtf , for longer queries where a term might occur mul- tiple times. In",
+          "citation": "(bm25_prf.pdf p31, chunk 1)"
         },
         {
-          "evidence_id": "rag_evaluation_benchmark_p01_c002",
-          "hybrid_score": 0.3958292744486547,
-          "bm25_norm": 0.5624040306524851,
-          "dense_norm": 0.2847794369794344,
-          "source_file": "rag_evaluation_benchmark.pdf",
-          "page": 1,
-          "text": "to 81.0% reduction in cheatability scores. More broadly, our pipeline offers a simple way to enhance benchmark difficulty and realism and drive development of more capable RAG systems. Keywords:multi-hop QA\u00b7unanswerability evaluation\u00b7synthetic data 1 Introduction Retrieval Augmented Generation (RAG) [11, 23] is a powerful approach for many NLP tasks, enabling LLMs to respond to diverse user requests by leveraging an external document collection. While RAG is highly effective at increasing model credibility [15], mitigating hallucinations, and improving response quality [12], there remains a ne",
-          "citation": "(rag_evaluation_benchmark.pdf p1, chunk 2)"
+          "evidence_id": "img_bm25_prf_table3_1",
+          "hybrid_score": 0.8472653351338238,
+          "bm25_norm": 0.8792210483831381,
+          "dense_norm": 0.8259615263009478,
+          "source_file": "bm25_prf_table3_1.png",
+          "page": 0,
+          "text": "bm25 prf table3 1",
+          "citation": "(image: bm25_prf_table3_1.png)"
         },
         {
-          "evidence_id": "img_ragas_table1_metrics",
-          "hybrid_score": 0.36378542065230995,
-          "bm25_norm": 0.0,
-          "dense_norm": 0.6063090344205166,
-          "source_file": "ragas_table1_metrics.png",
-          "page": 0,
-          "text": "ragas table1 metrics",
-          "citation": "(image: ragas_table1_metrics.png)"
+          "evidence_id": "bm25_prf_p39_c002",
+          "hybrid_score": 0.8137411662060561,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.6895686103434268,
+          "source_file": "bm25_prf.pdf",
+          "page": 39,
+          "text": "the user would unconsciouslycorrect the query by adding terms to it that disambiguate it. This does not mean that all queries and documents are position-proof, but the fraction that require positions is small. Second, it should be noted that taking into account the structure of a document (e.g., in BM25F) implicitly rewards prox- imity within important short streams, such as the title. 3.9 Open Source Implementations of BM25 and BM25F We review here several implementations of BM25 and BM25F available as open source. This list is not exhaustive, there may be other search engines or extensions o",
+          "citation": "(bm25_prf.pdf p39, chunk 2)"
+        },
+        {
+          "evidence_id": "bm25_prf_p51_c002",
+          "hybrid_score": 0.7799474196700571,
+          "bm25_norm": 0.7227745012675117,
+          "dense_norm": 0.8180626986050873,
+          "source_file": "bm25_prf.pdf",
+          "page": 51,
+          "text": "is because the stream weights in e\ufb00ect rescale the tf values, and k 1 has to be adjusted accordingly. If we have a goodkBM25 1 value for the regular BM25 function (no streams), we can propose a good initial value ofk1 for BM25F by scaling it according to the change Fig. 5.2 Greedy optimisation example: promising directions.",
+          "citation": "(bm25_prf.pdf p51, chunk 2)"
         }
       ],
       "text_evidence": [
         {
-          "evidence_id": "gfm_rag_p07_c001",
-          "hybrid_score": 0.791021858814533,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.6517030980242215,
-          "source_file": "gfm_rag.pdf",
-          "page": 7,
-          "text": "4 Experiment In experiments, we aim to address the following research questions: (1) How doesGFM-RAG perform in multi-hop retrieval and QA tasks? (Sections 4.2 and 4.3); (2) What are the efficiency and effectiveness of GFM-RAG in multi-hop retrieval? (Section 4.4); (3) How well does GFM-RAG generalize to unseen datasets as a foundation model? (Section 4.6); (4) How does the performance of GFM-RAG scale with training as a foundation model? (Section 4.7); (5) How to interpret GFM-RAG in multi-hop reasoning? (Section 4.8). 4.1 Experimental Setup Datasets. We first evaluate the effectiveness ofGFM",
-          "citation": "(gfm_rag.pdf p7, chunk 1)"
+          "evidence_id": "bm25_prf_p27_c001",
+          "hybrid_score": 0.9389079078592424,
+          "bm25_norm": 0.847269769648106,
+          "dense_norm": 1.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 27,
+          "text": "3.4 The Eliteness Model and BM25 357 3.4.4 BM25 Precursor We investigate the shape of the saturation function a little more closely. It is clear that the properties listed above severely limit the possible functions; nevertheless, there remain many possibilities, as illustrated for example in the left-hand graph in Figure 3.2. However, the 2-Poisson model generates much smoother functions, as shown in the right-hand graph. For most realistic combinations of the parameters the curve is convex, as the top two lines; for some combinations it has an initial concavity, as the bottom line. The next ",
+          "citation": "(bm25_prf.pdf p27, chunk 1)"
         },
         {
-          "evidence_id": "rag_evaluation_benchmark_p01_c002",
-          "hybrid_score": 0.3958292744486547,
-          "bm25_norm": 0.5624040306524851,
-          "dense_norm": 0.2847794369794344,
-          "source_file": "rag_evaluation_benchmark.pdf",
-          "page": 1,
-          "text": "to 81.0% reduction in cheatability scores. More broadly, our pipeline offers a simple way to enhance benchmark difficulty and realism and drive development of more capable RAG systems. Keywords:multi-hop QA\u00b7unanswerability evaluation\u00b7synthetic data 1 Introduction Retrieval Augmented Generation (RAG) [11, 23] is a powerful approach for many NLP tasks, enabling LLMs to respond to diverse user requests by leveraging an external document collection. While RAG is highly effective at increasing model credibility [15], mitigating hallucinations, and improving response quality [12], there remains a ne",
-          "citation": "(rag_evaluation_benchmark.pdf p1, chunk 2)"
+          "evidence_id": "bm25_prf_p31_c001",
+          "hybrid_score": 0.8620176997861977,
+          "bm25_norm": 0.7677777237998076,
+          "dense_norm": 0.9248443504437911,
+          "source_file": "bm25_prf.pdf",
+          "page": 31,
+          "text": "3.6 Multiple Streams and BM25F 361 circumstances. However, there is also evidence that optimal values do depend on other factors (such as the type of documents or queries). 3.5.1 Some V ariations on BM25 Published versions of BM25 can vary somewhat (the original BM25 [46] was a little more complicated than that of Equation (3.15), for example). Here we indicate some di\ufb00erences that might be encountered in di\ufb00erent versions of the function in published sources. \u2022 The original had a component for within-query term fre- quency qtf , for longer queries where a term might occur mul- tiple times. In",
+          "citation": "(bm25_prf.pdf p31, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p39_c002",
+          "hybrid_score": 0.8137411662060561,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.6895686103434268,
+          "source_file": "bm25_prf.pdf",
+          "page": 39,
+          "text": "the user would unconsciouslycorrect the query by adding terms to it that disambiguate it. This does not mean that all queries and documents are position-proof, but the fraction that require positions is small. Second, it should be noted that taking into account the structure of a document (e.g., in BM25F) implicitly rewards prox- imity within important short streams, such as the title. 3.9 Open Source Implementations of BM25 and BM25F We review here several implementations of BM25 and BM25F available as open source. This list is not exhaustive, there may be other search engines or extensions o",
+          "citation": "(bm25_prf.pdf p39, chunk 2)"
+        },
+        {
+          "evidence_id": "bm25_prf_p51_c002",
+          "hybrid_score": 0.7799474196700571,
+          "bm25_norm": 0.7227745012675117,
+          "dense_norm": 0.8180626986050873,
+          "source_file": "bm25_prf.pdf",
+          "page": 51,
+          "text": "is because the stream weights in e\ufb00ect rescale the tf values, and k 1 has to be adjusted accordingly. If we have a goodkBM25 1 value for the regular BM25 function (no streams), we can propose a good initial value ofk1 for BM25F by scaling it according to the change Fig. 5.2 Greedy optimisation example: promising directions.",
+          "citation": "(bm25_prf.pdf p51, chunk 2)"
         }
       ],
       "image_evidence": [
         {
-          "evidence_id": "img_gfm_rag_framework",
-          "hybrid_score": 0.6,
-          "bm25_norm": 0.0,
-          "dense_norm": 1.0,
-          "source_file": "gfm_rag_framework.png",
+          "evidence_id": "img_bm25_prf_table3_1",
+          "hybrid_score": 0.8472653351338238,
+          "bm25_norm": 0.8792210483831381,
+          "dense_norm": 0.8259615263009478,
+          "source_file": "bm25_prf_table3_1.png",
           "page": 0,
-          "text": "gfm rag framework",
-          "citation": "(image: gfm_rag_framework.png)"
-        },
-        {
-          "evidence_id": "img_gfm_rag_results_table",
-          "hybrid_score": 0.4674227552826091,
-          "bm25_norm": 0.0,
-          "dense_norm": 0.7790379254710152,
-          "source_file": "gfm_rag_results_table.png",
-          "page": 0,
-          "text": "gfm rag results table",
-          "citation": "(image: gfm_rag_results_table.png)"
-        },
-        {
-          "evidence_id": "img_ragas_table1_metrics",
-          "hybrid_score": 0.36378542065230995,
-          "bm25_norm": 0.0,
-          "dense_norm": 0.6063090344205166,
-          "source_file": "ragas_table1_metrics.png",
-          "page": 0,
-          "text": "ragas table1 metrics",
-          "citation": "(image: ragas_table1_metrics.png)"
+          "text": "bm25 prf table3 1",
+          "citation": "(image: bm25_prf_table3_1.png)"
         }
       ],
-      "missing_evidence_behavior": false,
-      "support_gate_pass": true,
-      "faithfulness_pass": true,
-      "answer": "4 Experiment In experiments, we aim to address the following research questions: (1) How doesGFM-RAG perform in multi-hop retrieval and QA tasks? (Sections 4.2 and 4.3); (2) What are the efficiency and effectiveness of GFM-RAG in multi-hop retrieval? (Section 4.4); (3) How well does GFM-RAG generalize to unseen datasets as a foundation model? (Section 4.6); (4) How does the performance of GFM-RAG scale with training as a foundation model? (Section 4.7); (5) How to interpret GFM-RAG in multi-hop reasoning? (Section 4.8). 4.1 Experimental Setup Datasets. We first evaluate the effectiveness ofGFM"
+      "missing_evidence_behavior": true,
+      "support_gate_pass": false,
+      "faithfulness_pass": false,
+      "answer": "Not enough evidence in the retrieved context."
     }
   ]
 }

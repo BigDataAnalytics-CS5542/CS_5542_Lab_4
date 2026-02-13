@@ -534,27 +534,29 @@ def _log_query_metrics(
     r_at_10: Optional[float] = None,
     out_path: Path = QUERY_METRICS_CSV,
 ) -> None:
-    """Append one row to logs/query_metrics.csv (creates file and dir if needed)."""
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    row = {
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "query_id": query_id,
-        "retrieval_mode": retrieval_mode,
-        "top_k": top_k,
-        "latency_ms": round(latency_ms, 2),
-        "Precision@5": "" if p_at_5 is None else round(p_at_5, 4),
-        "Recall@10": "" if r_at_10 is None else round(r_at_10, 4),
-        "evidence_ids_returned": ",".join(evidence_ids),
-        "faithfulness_pass": faithfulness_pass,
-        "missing_evidence_behavior": missing_evidence_behavior,
-    }
-    file_exists = out_path.exists()
-    fieldnames = list(row.keys())
-    with out_path.open("a", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        if not file_exists:
-            w.writeheader()
-        w.writerow(row)
+    print()
+    '''superceded by the one defined in main.py'''
+#     """Append one row to logs/query_metrics.csv (creates file and dir if needed)."""
+#     out_path.parent.mkdir(parents=True, exist_ok=True)
+#     row = {
+#         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+#         "query_id": query_id,
+#         "retrieval_mode": retrieval_mode,
+#         "top_k": top_k,
+#         "latency_ms": round(latency_ms, 2),
+#         "Precision@5": "" if p_at_5 is None else round(p_at_5, 4),
+#         "Recall@10": "" if r_at_10 is None else round(r_at_10, 4),
+#         "evidence_ids_returned": ",".join(evidence_ids),
+#         "faithfulness_pass": faithfulness_pass,
+#         "missing_evidence_behavior": missing_evidence_behavior,
+#     }
+#     file_exists = out_path.exists()
+#     fieldnames = list(row.keys())
+#     with out_path.open("a", newline="", encoding="utf-8") as f:
+#         w = csv.DictWriter(f, fieldnames=fieldnames)
+#         if not file_exists:
+#             w.writeheader()
+#         w.writerow(row)
 
 
 def _build_evidence_from_hits(
@@ -607,12 +609,20 @@ def run_query(
     t0 = time.time()
     kb = load_kb_map()
 
-    if retrieval_mode == "bm25":
-        sparse_hits = retrieve_sparse(question, top_k=top_k)
-        hits = [(eid, sc, sc, 0.0) for eid, sc in sparse_hits]
-    elif retrieval_mode == "dense":
-        dense_hits = retrieve_dense(question, top_k=top_k)
-        hits = [(eid, sc, 0.0, sc) for eid, sc in dense_hits]
+    if retrieval_mode == "Sparse":
+        sparse_raw = retrieve_sparse_topn(question, top_n=top_k)
+        sparse_norm = _minmax_norm(sparse_raw)
+        # Format as tuples: (evidence_id, score, bm25_norm, dense_norm)
+        hits = [(eid, score, score, 0.0) for eid, score in sparse_norm.items()]
+        hits.sort(key=lambda x: x[1], reverse=True)
+
+    elif retrieval_mode == "Dense":
+        # Dense only: vector similarity retrieval with normalization
+        dense_raw = retrieve_dense_topn(question, top_n=top_k)
+        dense_norm = _minmax_norm(dense_raw)
+        # Format as tuples: (evidence_id, score, bm25_norm, dense_norm)
+        hits = [(eid, score, 0.0, score) for eid, score in dense_norm.items()]
+        hits.sort(key=lambda x: x[1], reverse=True)
     else:
         hits = retrieve_hybrid(question, top_k=top_k, alpha=alpha, candidate_pool=candidate_pool)
 
@@ -648,6 +658,8 @@ def run_query(
         "retrieval_mode": retrieval_mode,
         "use_multimodal": use_multimodal,
         "alpha": alpha,
+        "p_at_5": p_at_5,
+        "r_at_10": r_at_10,
         "timestamp": t0,
         "latency_ms": latency_ms,
         "evidence": evidence,
@@ -684,6 +696,7 @@ def run_query(
 def run_hybrid_query(
     question: str,
     top_k: int = 5,
+    retrieval_mode: str = "Hybrid",
     alpha: float = 0.6,
     candidate_pool: int = 50,
     use_multimodal: bool = True,
@@ -696,7 +709,7 @@ def run_hybrid_query(
     return run_query(
         question=question,
         top_k=top_k,
-        retrieval_mode="hybrid",
+        retrieval_mode=retrieval_mode,
         use_multimodal=use_multimodal,
         alpha=alpha,
         candidate_pool=candidate_pool,

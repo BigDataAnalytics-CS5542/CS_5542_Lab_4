@@ -1,0 +1,4 @@
+timestamp,query_id,retrieval_mode,top_k,latency_ms,Precision@5,Recall@10,evidence_ids_returned,faithfulness_pass,missing_evidence_behavior
+1770956240.9821935,Explain bm25 normalization,Dense,5,2409.7840785980225,,,bm25_prf_p27_c001;bm25_prf_p31_c001;bm25_prf_p35_c001;img_bm25_prf_table3_1;bm25_prf_p51_c002,False,True
+1770956459.0060103,Explain bm25 normalization,Dense,5,2514.1327381134033,,,bm25_prf_p27_c001;bm25_prf_p31_c001;bm25_prf_p35_c001;img_bm25_prf_table3_1;bm25_prf_p51_c002,False,True
+1770956512.6851704,Explain bm25 normalization,Hybrid,5,48.34747314453125,,,bm25_prf_p27_c001;bm25_prf_p31_c001;img_bm25_prf_table3_1;bm25_prf_p39_c002;bm25_prf_p51_c002,False,True

@@ -29,11 +29,11 @@ def extract_metrics_from_json(json_data):
     
     # Calculate Precision@5 (top 5 results)
     # Note: Without ground truth, we'll set this as empty or placeholder
-    precision_at_5 = ''  # Requires ground truth to calculate
+    precision_at_5 = json_data.get('p_at_5', '')  # Requires ground truth to calculate
     
     # Calculate Recall@10 (top 10 results)
     # Note: Without ground truth, we'll set this as empty or placeholder
-    recall_at_10 = ''  # Requires ground truth to calculate
+    recall_at_10 = json_data.get('r_at_10', '')  # Requires ground truth to calculate
     
     # Extract query_id if available, otherwise leave empty
     query_id = json_data.get('question', '')
@@ -94,7 +94,7 @@ def append_to_csv(csv_path, metrics_dict):
         # Write the metrics row
         writer.writerow(metrics_dict)
 
-def process_json_to_csv(json_input, csv_path='./data/logs/query_metrics.csv'):
+def process_json_to_csv(json_input, csv_path='./logs/query_metrics.csv'):
     """
     Main function to process JSON and append to CSV.
     
