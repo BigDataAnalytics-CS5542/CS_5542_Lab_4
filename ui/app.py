@@ -1,8 +1,11 @@
+import os
 import streamlit as st
 import streamlit.components.v1 as components
 import requests
 import re
 import html as html_module
+
+DEFAULT_API_URL = os.environ.get("API_URL", "http://127.0.0.1:3001")
 
 # ── Page config (must be first Streamlit call) ──────────────────────────
 st.set_page_config(
@@ -208,7 +211,7 @@ if "history" not in st.session_state:
 with st.sidebar:
     st.header("Settings")
     with st.expander("Configuration", expanded=False):
-        api_url = st.text_input("API URL", value="http://127.0.0.1:3001")
+        api_url = st.text_input("API URL", value=DEFAULT_API_URL)
         top_k = st.slider("top_k (evidence count)", min_value=1, max_value=20, value=5)
         alpha = st.slider("alpha (dense weight)", min_value=0.0, max_value=1.0, value=0.6, step=0.05)
         user_id = st.text_input("User ID", value="default_user")
