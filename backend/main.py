@@ -31,8 +31,6 @@ def save_history(filename='./data/data/history.json'):
         json.dump(history, f, indent=2)
 
 def get_history(userID:str):
-    # return history[userID] '''<= uncomment if removing history.json and/or we want to read 
-    #                              only the local/current session. [feb 12 2026]''' 
     try:
         with open('./data/data/history.json', 'r') as f:
             history = json.load(f)
@@ -40,10 +38,6 @@ def get_history(userID:str):
     except FileNotFoundError:
         return []
     
-
-def write_query_metrics(results):
-    print()
-
 
 def log_results(userID, results):
     if userID not in history:
@@ -59,25 +53,6 @@ def run_query(userID, query, top_k, alpha):
     return results
     
 
-
-
-'''
-Input:
-• question
-• top_k
-• TODO: retrieval_mode [REQUIRED : >=2 retrieval modes]
-• TODO: use_multimodal
-Output:
-• generated answer
-• retrieved evidence list
-• retrieval scores
-• runtime metrics
-• failure_flag
-
-Grounding rule
-If evidence is missing:
-Not enough evidence in the retrieved context.
-'''
 
 @app.get("/history")
 def history_hook(userID:str) -> list[Dict[str,Any]]:
