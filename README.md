@@ -137,3 +137,29 @@ This deploys the **FastAPI backend** (RAG API). To deploy the **Streamlit fronte
 
 
 # Results Snapshots
+
+## BM25 PRF (should hit bm25_prf.pdf)
+### Type: Sparse
+"Explain BM25 length normalization and the difference between verbosity vs scope hypotheses.",
+![alt text](image-4.png)
+
+## RAG evaluation (should hit rag_evaluation_ragas.pdf / benchmark paper)
+### Type: Dense
+"What metrics does RAGAS use to evaluate a RAG system (faithfulness, answer relevance, context relevance), and what do they mean?",
+![alt text](image-5.png)
+
+## Chain-of-Retrieval (should hit chain_of_retrieval.pdf)
+### Type: Hybrid
+"What is Chain-of-Retrieval Augmented Generation and why does multi-step retrieval help?",
+![alt text](image-6.png)
+"Does Chain-of-Retrieval always help? What happens as chain length increases?",
+
+## GraphFlow (should hit graphflow_rag_p04_architecture.png / graphflow_rag.pdf)
+### Type: Hybrid
+"What is the GraphFlow as it relates to RAG and what is its architecture?",
+![alt text](image-7.png)
+
+## Off-topic / unanswerable (should be missing=True)
+### Type: Hybrid
+"What are the economic impacts of climate change?",
+![alt text](image-8.png)

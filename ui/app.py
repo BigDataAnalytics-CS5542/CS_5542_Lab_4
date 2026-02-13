@@ -74,11 +74,11 @@ st.markdown(CSS, unsafe_allow_html=True)
 
 # ── Helper functions ────────────────────────────────────────────────────
 
-def call_query_api(api_url: str, query: str, top_k: int, alpha: float, user_id: str) -> dict:
+def call_query_api(api_url: str, query: str, top_k: int, retrieval_mode: str, alpha: float, user_id: str) -> dict:
     """POST to /query with query parameters (not JSON body)."""
     r = requests.post(
         f"{api_url}/query",
-        params={"query": query, "top_k": top_k, "alpha": alpha, "userID": user_id},
+        params={"query": query, "top_k": top_k, "retrieval_mode": retrieval_mode, "alpha": alpha, "userID": user_id},
         timeout=60,
     )
     r.raise_for_status()
@@ -222,6 +222,7 @@ with st.sidebar:
     with st.expander("Configuration", expanded=False):
         api_url = st.text_input("API URL", value=DEFAULT_API_URL)
         top_k = st.slider("top_k (evidence count)", min_value=1, max_value=20, value=5)
+        retrieval_mode = st.selectbox("Retrieval Mode", options=["Sparse", "Dense", "Hybrid"], index=2)
         alpha = st.slider("alpha (dense weight)", min_value=0.0, max_value=1.0, value=0.6, step=0.05)
         user_id = st.text_input("User ID", value="default_user")
 
@@ -258,7 +259,7 @@ with st.form("query_form", clear_on_submit=False):
 if ask_clicked and query_text.strip():
     with st.spinner("Searching and generating answer..."):
         try:
-            result = call_query_api(api_url, query_text.strip(), top_k, alpha, user_id)
+            result = call_query_api(api_url, query_text.strip(), top_k, retrieval_mode, alpha, user_id)
             st.session_state.current_result = result
             # Refresh history so the sidebar updates immediately
             try:

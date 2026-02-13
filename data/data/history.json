@@ -1,140 +1,19 @@
 {
   "default_user": [
     {
-      "question": "Explain bm25 normalization",
+      "question": "How do graphs interact with RAG?",
       "top_k": 5,
-      "retrieval_mode": "Hybrid",
+      "retrieval_mode": "Dense",
       "use_multimodal": true,
       "alpha": 0.6,
       "p_at_5": null,
       "r_at_10": null,
-      "timestamp": 1770959864.3727038,
-      "latency_ms": 4022.99427986145,
-      "evidence": [
-        {
-          "evidence_id": "bm25_prf_p27_c001",
-          "hybrid_score": 0.9389079078592424,
-          "bm25_norm": 0.847269769648106,
-          "dense_norm": 1.0,
-          "source_file": "bm25_prf.pdf",
-          "page": 27,
-          "text": "3.4 The Eliteness Model and BM25 357 3.4.4 BM25 Precursor We investigate the shape of the saturation function a little more closely. It is clear that the properties listed above severely limit the possible functions; nevertheless, there remain many possibilities, as illustrated for example in the left-hand graph in Figure 3.2. However, the 2-Poisson model generates much smoother functions, as shown in the right-hand graph. For most realistic combinations of the parameters the curve is convex, as the top two lines; for some combinations it has an initial concavity, as the bottom line. The next ",
-          "citation": "(bm25_prf.pdf p27, chunk 1)"
-        },
-        {
-          "evidence_id": "bm25_prf_p31_c001",
-          "hybrid_score": 0.8620176997861977,
-          "bm25_norm": 0.7677777237998076,
-          "dense_norm": 0.9248443504437911,
-          "source_file": "bm25_prf.pdf",
-          "page": 31,
-          "text": "3.6 Multiple Streams and BM25F 361 circumstances. However, there is also evidence that optimal values do depend on other factors (such as the type of documents or queries). 3.5.1 Some V ariations on BM25 Published versions of BM25 can vary somewhat (the original BM25 [46] was a little more complicated than that of Equation (3.15), for example). Here we indicate some di\ufb00erences that might be encountered in di\ufb00erent versions of the function in published sources. \u2022 The original had a component for within-query term fre- quency qtf , for longer queries where a term might occur mul- tiple times. In",
-          "citation": "(bm25_prf.pdf p31, chunk 1)"
-        },
-        {
-          "evidence_id": "img_bm25_prf_table3_1",
-          "hybrid_score": 0.8472653351338238,
-          "bm25_norm": 0.8792210483831381,
-          "dense_norm": 0.8259615263009478,
-          "source_file": "bm25_prf_table3_1.png",
-          "page": 0,
-          "text": "bm25 prf table3 1",
-          "citation": "(image: bm25_prf_table3_1.png)"
-        },
-        {
-          "evidence_id": "bm25_prf_p39_c002",
-          "hybrid_score": 0.8137411662060561,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.6895686103434268,
-          "source_file": "bm25_prf.pdf",
-          "page": 39,
-          "text": "the user would unconsciouslycorrect the query by adding terms to it that disambiguate it. This does not mean that all queries and documents are position-proof, but the fraction that require positions is small. Second, it should be noted that taking into account the structure of a document (e.g., in BM25F) implicitly rewards prox- imity within important short streams, such as the title. 3.9 Open Source Implementations of BM25 and BM25F We review here several implementations of BM25 and BM25F available as open source. This list is not exhaustive, there may be other search engines or extensions o",
-          "citation": "(bm25_prf.pdf p39, chunk 2)"
-        },
-        {
-          "evidence_id": "bm25_prf_p51_c002",
-          "hybrid_score": 0.7799474196700571,
-          "bm25_norm": 0.7227745012675117,
-          "dense_norm": 0.8180626986050873,
-          "source_file": "bm25_prf.pdf",
-          "page": 51,
-          "text": "is because the stream weights in e\ufb00ect rescale the tf values, and k 1 has to be adjusted accordingly. If we have a goodkBM25 1 value for the regular BM25 function (no streams), we can propose a good initial value ofk1 for BM25F by scaling it according to the change Fig. 5.2 Greedy optimisation example: promising directions.",
-          "citation": "(bm25_prf.pdf p51, chunk 2)"
-        }
-      ],
-      "text_evidence": [
-        {
-          "evidence_id": "bm25_prf_p27_c001",
-          "hybrid_score": 0.9389079078592424,
-          "bm25_norm": 0.847269769648106,
-          "dense_norm": 1.0,
-          "source_file": "bm25_prf.pdf",
-          "page": 27,
-          "text": "3.4 The Eliteness Model and BM25 357 3.4.4 BM25 Precursor We investigate the shape of the saturation function a little more closely. It is clear that the properties listed above severely limit the possible functions; nevertheless, there remain many possibilities, as illustrated for example in the left-hand graph in Figure 3.2. However, the 2-Poisson model generates much smoother functions, as shown in the right-hand graph. For most realistic combinations of the parameters the curve is convex, as the top two lines; for some combinations it has an initial concavity, as the bottom line. The next ",
-          "citation": "(bm25_prf.pdf p27, chunk 1)"
-        },
-        {
-          "evidence_id": "bm25_prf_p31_c001",
-          "hybrid_score": 0.8620176997861977,
-          "bm25_norm": 0.7677777237998076,
-          "dense_norm": 0.9248443504437911,
-          "source_file": "bm25_prf.pdf",
-          "page": 31,
-          "text": "3.6 Multiple Streams and BM25F 361 circumstances. However, there is also evidence that optimal values do depend on other factors (such as the type of documents or queries). 3.5.1 Some V ariations on BM25 Published versions of BM25 can vary somewhat (the original BM25 [46] was a little more complicated than that of Equation (3.15), for example). Here we indicate some di\ufb00erences that might be encountered in di\ufb00erent versions of the function in published sources. \u2022 The original had a component for within-query term fre- quency qtf , for longer queries where a term might occur mul- tiple times. In",
-          "citation": "(bm25_prf.pdf p31, chunk 1)"
-        },
-        {
-          "evidence_id": "bm25_prf_p39_c002",
-          "hybrid_score": 0.8137411662060561,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.6895686103434268,
-          "source_file": "bm25_prf.pdf",
-          "page": 39,
-          "text": "the user would unconsciouslycorrect the query by adding terms to it that disambiguate it. This does not mean that all queries and documents are position-proof, but the fraction that require positions is small. Second, it should be noted that taking into account the structure of a document (e.g., in BM25F) implicitly rewards prox- imity within important short streams, such as the title. 3.9 Open Source Implementations of BM25 and BM25F We review here several implementations of BM25 and BM25F available as open source. This list is not exhaustive, there may be other search engines or extensions o",
-          "citation": "(bm25_prf.pdf p39, chunk 2)"
-        },
-        {
-          "evidence_id": "bm25_prf_p51_c002",
-          "hybrid_score": 0.7799474196700571,
-          "bm25_norm": 0.7227745012675117,
-          "dense_norm": 0.8180626986050873,
-          "source_file": "bm25_prf.pdf",
-          "page": 51,
-          "text": "is because the stream weights in e\ufb00ect rescale the tf values, and k 1 has to be adjusted accordingly. If we have a goodkBM25 1 value for the regular BM25 function (no streams), we can propose a good initial value ofk1 for BM25F by scaling it according to the change Fig. 5.2 Greedy optimisation example: promising directions.",
-          "citation": "(bm25_prf.pdf p51, chunk 2)"
-        }
-      ],
-      "image_evidence": [
-        {
-          "evidence_id": "img_bm25_prf_table3_1",
-          "hybrid_score": 0.8472653351338238,
-          "bm25_norm": 0.8792210483831381,
-          "dense_norm": 0.8259615263009478,
-          "source_file": "bm25_prf_table3_1.png",
-          "page": 0,
-          "text": "bm25 prf table3 1",
-          "citation": "(image: bm25_prf_table3_1.png)"
-        }
-      ],
-      "missing_evidence_behavior": true,
-      "support_gate_pass": false,
-      "faithfulness_pass": false,
-      "answer": "Not enough evidence in the retrieved context."
-    },
-    {
-      "question": "How do graphs relate to RAG?",
-      "top_k": 5,
-      "retrieval_mode": "Hybrid",
-      "use_multimodal": true,
-      "alpha": 0.6,
-      "p_at_5": null,
-      "r_at_10": null,
-      "timestamp": 1770959998.7819374,
-      "latency_ms": 115.97990989685059,
+      "timestamp": 1770961026.4263122,
+      "latency_ms": 4153.7909507751465,
       "evidence": [
         {
           "evidence_id": "graphflow_rag_p28_c001",
-          "hybrid_score": 0.6,
+          "hybrid_score": 1.0,
           "bm25_norm": 0.0,
           "dense_norm": 1.0,
           "source_file": "graphflow_rag.pdf",
@@ -143,50 +22,50 @@
           "citation": "(graphflow_rag.pdf p28, chunk 1)"
         },
         {
-          "evidence_id": "gfm_rag_p03_c002",
-          "hybrid_score": 0.5339090177164554,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.22318169619409226,
-          "source_file": "gfm_rag.pdf",
-          "page": 3,
-          "text": "16] enhances multi-hop retrieval by using a personalized PageRank algorithm to locate relevant knowledge with graphs. However, the graph structure can be noisy and incomplete, leading to suboptimal performance. Efforts to incorporate GNNs into graph-enhanced RAG [41, 18] have shown impressive results due to the multi-hop graph reasoning capabilities of GNNs in handling incomplete graphs [73]. Nonetheless, these methods still limit in generalizability due to the lack of a graph foundational model. Graph Foundation models (GFM) aims to be a large-scale model that can generalize to various datase",
-          "citation": "(gfm_rag.pdf p3, chunk 2)"
-        },
-        {
           "evidence_id": "img_graphflow_rag_p04_architecture",
-          "hybrid_score": 0.4468854021719025,
+          "hybrid_score": 0.8037068735511904,
           "bm25_norm": 0.0,
-          "dense_norm": 0.7448090036198375,
+          "dense_norm": 0.8037068735511904,
           "source_file": "graphflow_rag_p04_architecture.png",
           "page": 0,
           "text": "graphflow rag p04 architecture",
           "citation": "(image: graphflow_rag_p04_architecture.png)"
         },
         {
-          "evidence_id": "gfm_rag_p27_c001",
-          "hybrid_score": 0.4356642385178442,
-          "bm25_norm": 0.0,
-          "dense_norm": 0.726107064196407,
-          "source_file": "gfm_rag.pdf",
-          "page": 27,
-          "text": "Table 21: Comparison of the model performance under the KG-index constructed by different LLMs. Method HotpotQA MuSiQue 2Wiki R@2 R@5 R@2 R@5 R@2 R@5 GFM-RAG (gpt-4o-mini) 78.3 87.1 49.1 58.2 90.8 95.6 HippoRAG (gpt-4o-mini) 62.2 79.3 41.7 53.6 72.1 89.5 GFM-RAG (gpt-3.5-trubo) 75.6 84.7 46.1 55.8 85.2 90.4 HippoRAG (gpt-3.5-trubo) 60.5 77.7 40.9 51.9 70.7 89.1 of GFM-RAG is significantly higher than HippoRAG under both KG-indexes. This indicates that GFM-RAG is more robust to the quality of the KG-index, demonstrating the effectiveness of the GFM in graph reasoning and retrieval. F Prompts In",
-          "citation": "(gfm_rag.pdf p27, chunk 1)"
-        },
-        {
           "evidence_id": "img_graphflow_rag_p25_training_dynamics",
-          "hybrid_score": 0.3494434394314893,
+          "hybrid_score": 0.3645785328431492,
           "bm25_norm": 0.0,
-          "dense_norm": 0.5824057323858155,
+          "dense_norm": 0.3645785328431492,
           "source_file": "graphflow_rag_p25_training_dynamics.png",
           "page": 0,
           "text": "graphflow rag p25 training dynamics",
           "citation": "(image: graphflow_rag_p25_training_dynamics.png)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p02_c001",
+          "hybrid_score": 0.22299530567403983,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.22299530567403983,
+          "source_file": "graphflow_rag.pdf",
+          "page": 2,
+          "text": "Recent KG-based RAG methods employ two approaches to retrieve information from KGs when receiving an input query [47, 19, 48]. Retrieval-based approaches [21, 37, 80] leverage pretrained language models [62] to encode KG text into embeddings, and use retriever models [31] to identify relational triplets or subgraphs in KGs that most support the query. And agent-based methods treat LLMs as searching agents to navigate across KGs and retrieve a relational path with supporting information for a given query [68, 47, 50]. While KG-based RAG methods show promise in retrieving structural information ",
+          "citation": "(graphflow_rag.pdf p2, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p27_c001",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "gfm_rag.pdf",
+          "page": 27,
+          "text": "Table 21: Comparison of the model performance under the KG-index constructed by different LLMs. Method HotpotQA MuSiQue 2Wiki R@2 R@5 R@2 R@5 R@2 R@5 GFM-RAG (gpt-4o-mini) 78.3 87.1 49.1 58.2 90.8 95.6 HippoRAG (gpt-4o-mini) 62.2 79.3 41.7 53.6 72.1 89.5 GFM-RAG (gpt-3.5-trubo) 75.6 84.7 46.1 55.8 85.2 90.4 HippoRAG (gpt-3.5-trubo) 60.5 77.7 40.9 51.9 70.7 89.1 of GFM-RAG is significantly higher than HippoRAG under both KG-indexes. This indicates that GFM-RAG is more robust to the quality of the KG-index, demonstrating the effectiveness of the GFM in graph reasoning and retrieval. F Prompts In",
+          "citation": "(gfm_rag.pdf p27, chunk 1)"
         }
       ],
       "text_evidence": [
         {
           "evidence_id": "graphflow_rag_p28_c001",
-          "hybrid_score": 0.6,
+          "hybrid_score": 1.0,
           "bm25_norm": 0.0,
           "dense_norm": 1.0,
           "source_file": "graphflow_rag.pdf",
@@ -195,20 +74,20 @@
           "citation": "(graphflow_rag.pdf p28, chunk 1)"
         },
         {
-          "evidence_id": "gfm_rag_p03_c002",
-          "hybrid_score": 0.5339090177164554,
-          "bm25_norm": 1.0,
-          "dense_norm": 0.22318169619409226,
-          "source_file": "gfm_rag.pdf",
-          "page": 3,
-          "text": "16] enhances multi-hop retrieval by using a personalized PageRank algorithm to locate relevant knowledge with graphs. However, the graph structure can be noisy and incomplete, leading to suboptimal performance. Efforts to incorporate GNNs into graph-enhanced RAG [41, 18] have shown impressive results due to the multi-hop graph reasoning capabilities of GNNs in handling incomplete graphs [73]. Nonetheless, these methods still limit in generalizability due to the lack of a graph foundational model. Graph Foundation models (GFM) aims to be a large-scale model that can generalize to various datase",
-          "citation": "(gfm_rag.pdf p3, chunk 2)"
+          "evidence_id": "graphflow_rag_p02_c001",
+          "hybrid_score": 0.22299530567403983,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.22299530567403983,
+          "source_file": "graphflow_rag.pdf",
+          "page": 2,
+          "text": "Recent KG-based RAG methods employ two approaches to retrieve information from KGs when receiving an input query [47, 19, 48]. Retrieval-based approaches [21, 37, 80] leverage pretrained language models [62] to encode KG text into embeddings, and use retriever models [31] to identify relational triplets or subgraphs in KGs that most support the query. And agent-based methods treat LLMs as searching agents to navigate across KGs and retrieve a relational path with supporting information for a given query [68, 47, 50]. While KG-based RAG methods show promise in retrieving structural information ",
+          "citation": "(graphflow_rag.pdf p2, chunk 1)"
         },
         {
           "evidence_id": "gfm_rag_p27_c001",
-          "hybrid_score": 0.4356642385178442,
+          "hybrid_score": 0.0,
           "bm25_norm": 0.0,
-          "dense_norm": 0.726107064196407,
+          "dense_norm": 0.0,
           "source_file": "gfm_rag.pdf",
           "page": 27,
           "text": "Table 21: Comparison of the model performance under the KG-index constructed by different LLMs. Method HotpotQA MuSiQue 2Wiki R@2 R@5 R@2 R@5 R@2 R@5 GFM-RAG (gpt-4o-mini) 78.3 87.1 49.1 58.2 90.8 95.6 HippoRAG (gpt-4o-mini) 62.2 79.3 41.7 53.6 72.1 89.5 GFM-RAG (gpt-3.5-trubo) 75.6 84.7 46.1 55.8 85.2 90.4 HippoRAG (gpt-3.5-trubo) 60.5 77.7 40.9 51.9 70.7 89.1 of GFM-RAG is significantly higher than HippoRAG under both KG-indexes. This indicates that GFM-RAG is more robust to the quality of the KG-index, demonstrating the effectiveness of the GFM in graph reasoning and retrieval. F Prompts In",
@@ -218,9 +97,9 @@
       "image_evidence": [
         {
           "evidence_id": "img_graphflow_rag_p04_architecture",
-          "hybrid_score": 0.4468854021719025,
+          "hybrid_score": 0.8037068735511904,
           "bm25_norm": 0.0,
-          "dense_norm": 0.7448090036198375,
+          "dense_norm": 0.8037068735511904,
           "source_file": "graphflow_rag_p04_architecture.png",
           "page": 0,
           "text": "graphflow rag p04 architecture",
@@ -228,9 +107,9 @@
         },
         {
           "evidence_id": "img_graphflow_rag_p25_training_dynamics",
-          "hybrid_score": 0.3494434394314893,
+          "hybrid_score": 0.3645785328431492,
           "bm25_norm": 0.0,
-          "dense_norm": 0.5824057323858155,
+          "dense_norm": 0.3645785328431492,
           "source_file": "graphflow_rag_p25_training_dynamics.png",
           "page": 0,
           "text": "graphflow rag p25 training dynamics",
@@ -240,7 +119,729 @@
       "missing_evidence_behavior": false,
       "support_gate_pass": true,
       "faithfulness_pass": true,
-      "answer": "16] enhances multi-hop retrieval by using a personalized PageRank algorithm to locate relevant knowledge with graphs. However, the graph structure can be noisy and incomplete, leading to suboptimal performance. Efforts to incorporate GNNs into graph-enhanced RAG [41, 18] have shown impressive results due to the multi-hop graph reasoning capabilities of GNNs in handling incomplete graphs [73]. Nonetheless, these methods still limit in generalizability due to the lack of a graph foundational model. Graph Foundation models (GFM) aims to be a large-scale model that can generalize to various datase"
+      "answer": "Recent KG-based RAG methods employ two approaches to retrieve information from KGs when receiving an input query [47, 19, 48]. Retrieval-based approaches [21, 37, 80] leverage pretrained language models [62] to encode KG text into embeddings, and use retriever models [31] to identify relational triplets or subgraphs in KGs that most support the query. And agent-based methods treat LLMs as searching agents to navigate across KGs and retrieve a relational path with supporting information for a given query [68, 47, 50]. While KG-based RAG methods show promise in retrieving structural information "
+    },
+    {
+      "question": "What are some RAG evaluation benchmarks?",
+      "top_k": 5,
+      "retrieval_mode": "Sparse",
+      "use_multimodal": true,
+      "alpha": 0.6,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961273.4389243,
+      "latency_ms": 48.520565032958984,
+      "evidence": [
+        {
+          "evidence_id": "chain_of_retrieval_p19_c001",
+          "hybrid_score": 1.0,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Table 11: Examples from the validation set of the HotpotQA dataset. For conciseness, all retrieved documents at each step are omitted. Correct answers are highlighted in blue, while incorrect answers are highlighted in red. Query:What wrestling team is Mathew Thomas Rehwoldt a part of? RAG without Chain-of-Retrieval Final Answer:WWE\u0017 CoRAG (Ours) Sub-query 1: What is Mathew Thomas Rehwoldt\u2019s profession? Sub-answer 1: No relevant information found. Sub-query 2: What is Mathew Thomas Rehwoldt\u2019s name in the wrestling industry? Sub-answer 2: Aiden English Sub-query 3: What wrestling team is Aiden ",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 1)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p01_c003",
+          "hybrid_score": 0.8758027216312801,
+          "bm25_norm": 0.8758027216312801,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 1,
+          "text": "retrieved docu- ments to the input of a standard LM can also work well (Khattab et al., 2022; Ram et al., 2023; Shi et al., 2023), thus making it possible to use retrieval- augmented strategies in combination with LLMs that are only available through APIs. While the usefulness of retrieval-augmented strategies is clear, their implementation requires a significant amount of tuning, as the overall per- formance will be affected by the retrieval model, the considered corpus, the LM, or the prompt for- mulation, among others. Automated evaluation of retrieval-augmented systems is thus paramount. I",
+          "citation": "(rag_evaluation_ragas.pdf p1, chunk 3)"
+        },
+        {
+          "evidence_id": "rag_evaluation_benchmark_p11_c002",
+          "hybrid_score": 0.2684399538565714,
+          "bm25_norm": 0.2684399538565714,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_benchmark.pdf",
+          "page": 11,
+          "text": "Q., Zhang, W.: Hoprag: Multi-hop reasoning for logic-aware retrieval-augmented generation (2025), https://arxiv.org/abs/2502.12442 27. Liu, J.: LlamaIndex (11 2022). https://doi.org/10.5281/zenodo.1234, https: //github.com/jerryjliu/llama index 28. OpenAI: Gpt-5 system card. https://cdn.openai.com/gpt-5-system-card.pdf (2025) 29. Peng, X., Choubey, P.K., Xiong, C., Wu, C.S.: Unanswerability evaluation for retreival augmented generation. arXiv preprint arXiv:2412.12300 (2024) 30. Peng, Z., Nian, J., Evfimievski, A., Fang, Y.: Eloq: Resources for enhancing llm detection of out-of-scope questions",
+          "citation": "(rag_evaluation_benchmark.pdf p11, chunk 2)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p02_c004",
+          "hybrid_score": 0.05261634875810174,
+          "bm25_norm": 0.05261634875810174,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 2,
+          "text": "have been typically used in the literature, most approaches have relied on the availability of one or more reference answers. For instance, BERTScore (Zhang et al., 2020) and MoverScore (Zhao et al., 2019) use contex- tualised embeddings, produced by a pre-trained BERT model, to compare the similarity between the generated answer and the reference answers. BARTScore (Yuan et al., 2021) similarly uses refer- ence answers to compute aspects such as precision (estimated as the probability of generating the gen- erated answer given the reference) and recall (esti- mated as the probability of gener",
+          "citation": "(rag_evaluation_ragas.pdf p2, chunk 4)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p19_c002",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Turkey. Sub-query 2: What is the name of the poet who wrote the only novel? Sub-answer 2: Emily Bront\u00eb Sub-query 3: What country is the poet who wrote the only novel originally from? Sub-answer 3: United States Sub-query 4: What is the name of the poet who wrote the only novel that Thomas Parker Sanborn was a model for? Sub-answer 4: George Santayana Sub-query 5: What poet wrote the only novel that Thomas Parker Sanborn was a model for? Sub-answer 5: George Santayana Sub-query 6: What country is the poet George Santayana originally from? Sub-answer 6: Spain. Final Answer:Spain\u0013 Query:Which uni",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 2)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "chain_of_retrieval_p19_c001",
+          "hybrid_score": 1.0,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Table 11: Examples from the validation set of the HotpotQA dataset. For conciseness, all retrieved documents at each step are omitted. Correct answers are highlighted in blue, while incorrect answers are highlighted in red. Query:What wrestling team is Mathew Thomas Rehwoldt a part of? RAG without Chain-of-Retrieval Final Answer:WWE\u0017 CoRAG (Ours) Sub-query 1: What is Mathew Thomas Rehwoldt\u2019s profession? Sub-answer 1: No relevant information found. Sub-query 2: What is Mathew Thomas Rehwoldt\u2019s name in the wrestling industry? Sub-answer 2: Aiden English Sub-query 3: What wrestling team is Aiden ",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 1)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p01_c003",
+          "hybrid_score": 0.8758027216312801,
+          "bm25_norm": 0.8758027216312801,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 1,
+          "text": "retrieved docu- ments to the input of a standard LM can also work well (Khattab et al., 2022; Ram et al., 2023; Shi et al., 2023), thus making it possible to use retrieval- augmented strategies in combination with LLMs that are only available through APIs. While the usefulness of retrieval-augmented strategies is clear, their implementation requires a significant amount of tuning, as the overall per- formance will be affected by the retrieval model, the considered corpus, the LM, or the prompt for- mulation, among others. Automated evaluation of retrieval-augmented systems is thus paramount. I",
+          "citation": "(rag_evaluation_ragas.pdf p1, chunk 3)"
+        },
+        {
+          "evidence_id": "rag_evaluation_benchmark_p11_c002",
+          "hybrid_score": 0.2684399538565714,
+          "bm25_norm": 0.2684399538565714,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_benchmark.pdf",
+          "page": 11,
+          "text": "Q., Zhang, W.: Hoprag: Multi-hop reasoning for logic-aware retrieval-augmented generation (2025), https://arxiv.org/abs/2502.12442 27. Liu, J.: LlamaIndex (11 2022). https://doi.org/10.5281/zenodo.1234, https: //github.com/jerryjliu/llama index 28. OpenAI: Gpt-5 system card. https://cdn.openai.com/gpt-5-system-card.pdf (2025) 29. Peng, X., Choubey, P.K., Xiong, C., Wu, C.S.: Unanswerability evaluation for retreival augmented generation. arXiv preprint arXiv:2412.12300 (2024) 30. Peng, Z., Nian, J., Evfimievski, A., Fang, Y.: Eloq: Resources for enhancing llm detection of out-of-scope questions",
+          "citation": "(rag_evaluation_benchmark.pdf p11, chunk 2)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p02_c004",
+          "hybrid_score": 0.05261634875810174,
+          "bm25_norm": 0.05261634875810174,
+          "dense_norm": 0.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 2,
+          "text": "have been typically used in the literature, most approaches have relied on the availability of one or more reference answers. For instance, BERTScore (Zhang et al., 2020) and MoverScore (Zhao et al., 2019) use contex- tualised embeddings, produced by a pre-trained BERT model, to compare the similarity between the generated answer and the reference answers. BARTScore (Yuan et al., 2021) similarly uses refer- ence answers to compute aspects such as precision (estimated as the probability of generating the gen- erated answer given the reference) and recall (esti- mated as the probability of gener",
+          "citation": "(rag_evaluation_ragas.pdf p2, chunk 4)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p19_c002",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Turkey. Sub-query 2: What is the name of the poet who wrote the only novel? Sub-answer 2: Emily Bront\u00eb Sub-query 3: What country is the poet who wrote the only novel originally from? Sub-answer 3: United States Sub-query 4: What is the name of the poet who wrote the only novel that Thomas Parker Sanborn was a model for? Sub-answer 4: George Santayana Sub-query 5: What poet wrote the only novel that Thomas Parker Sanborn was a model for? Sub-answer 5: George Santayana Sub-query 6: What country is the poet George Santayana originally from? Sub-answer 6: Spain. Final Answer:Spain\u0013 Query:Which uni",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 2)"
+        }
+      ],
+      "image_evidence": [],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "faithfulness_pass": true,
+      "answer": "Q., Zhang, W.: Hoprag: Multi-hop reasoning for logic-aware retrieval-augmented generation (2025), https://arxiv.org/abs/2502.12442 27. Liu, J.: LlamaIndex (11 2022). https://doi.org/10.5281/zenodo.1234, https: //github.com/jerryjliu/llama index 28. OpenAI: Gpt-5 system card. https://cdn.openai.com/gpt-5-system-card.pdf (2025) 29. Peng, X., Choubey, P.K., Xiong, C., Wu, C.S.: Unanswerability evaluation for retreival augmented generation. arXiv preprint arXiv:2412.12300 (2024) 30. Peng, Z., Nian, J., Evfimievski, A., Fang, Y.: Eloq: Resources for enhancing llm detection of out-of-scope questions"
+    },
+    {
+      "question": "Explain BM25 length normalization and the difference between verbosity vs scope hypotheses.",
+      "top_k": 5,
+      "retrieval_mode": "Sparse",
+      "use_multimodal": true,
+      "alpha": 0.6,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961386.193143,
+      "latency_ms": 45.33052444458008,
+      "evidence": [
+        {
+          "evidence_id": "bm25_prf_p29_c001",
+          "hybrid_score": 1.0,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 29,
+          "text": "3.4 The Eliteness Model and BM25 359 or shorter; we consider only the longer case. Why might an author so decide? We can postulate two extreme cases: V erbosity: Some authors are simply more verbose than others, using more words to say the same thing. Scope: Some authors have more to say: they may write a single document containing or covering more ground. An extreme version would have the author writing two or more documents and concatenating them. The verbosity hypothesis suggests that we should simply normalise any observed tf s by dividing by document length. The scope hypothesis, on the o",
+          "citation": "(bm25_prf.pdf p29, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p34_c001",
+          "hybrid_score": 0.7082799203617036,
+          "bm25_norm": 0.7082799203617036,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 34,
+          "text": "364 Derived Models a similarly weighted variant of the total document length: \u02dctf i = S\u2211 s=1 vs tf si (3.16) \u02dcdl = S\u2211 s=1 vs sl s (3.17) \u02dcavdl = average of \u02dcdl across documents wsimpleBM25F i = \u02dctf i k1 ( (1 \u2212 b)+ b \u02dcdl \u02dcavdl ) + \u02dctf i wRSJ i (3.18) However, we may also want to allow the parameters of BM25 to vary between streams \u2014 it may be that the di\ufb00erent streams have di\ufb00erent characteristics, e.g., in relation to verbosityv. scope (as de\ufb01ned in Section 3.4.5). It is in fact possible to re-arrange formula (3.15) so as to include any of the following in the stream-speci\ufb01c part: k 1, b, wRSJ",
+          "citation": "(bm25_prf.pdf p34, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p52_c001",
+          "hybrid_score": 0.029652436241300914,
+          "bm25_norm": 0.029652436241300914,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 52,
+          "text": "382 Parameter Optimisation in average document length from the unweighted to the weighted form: kBM25F 1 \u2248 kBM25 1 \u2211 s vsavsl s\u2211 s avsl s (5.1) 5.2.1 F actoring the Search A very useful technique for speeding up the search in practice is to factor the search into batches, optimising together only the parame- ters that are known to be strongly dependent. When doing this it is important to choose the initial parameters and the order of the batches judiciously. A typical schedule for BM25F may be: 1. Compute the optimal k 1 and b (ignoring streams). This is equivalent to setting all vs = 1 and al",
+          "citation": "(bm25_prf.pdf p52, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p12_c001",
+          "hybrid_score": 0.02926853248562041,
+          "bm25_norm": 0.02926853248562041,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 12,
+          "text": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr",
+          "citation": "(bm25_prf.pdf p12, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p39_c001",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 39,
+          "text": "3.9 Open Source Implementations of BM25 and BM25F 369 the PRF, since it models a di\ufb00erent distribution:P(D,Q |Rel) instead of the posterior P(Rel|D,Q). We end this section with a brief discussion of why position infor- mation may not be as important as it may seem at \ufb01rst view. It is sobering to see how hard it has been in the past to e\ufb00ectively use prox- imity in IR experiments. All the works referenced in this section claim statistically signi\ufb01cant improvements over non-positional baselines, but the improvements reported are small. We believe this is specially the case for small collections ",
+          "citation": "(bm25_prf.pdf p39, chunk 1)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "bm25_prf_p29_c001",
+          "hybrid_score": 1.0,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 29,
+          "text": "3.4 The Eliteness Model and BM25 359 or shorter; we consider only the longer case. Why might an author so decide? We can postulate two extreme cases: V erbosity: Some authors are simply more verbose than others, using more words to say the same thing. Scope: Some authors have more to say: they may write a single document containing or covering more ground. An extreme version would have the author writing two or more documents and concatenating them. The verbosity hypothesis suggests that we should simply normalise any observed tf s by dividing by document length. The scope hypothesis, on the o",
+          "citation": "(bm25_prf.pdf p29, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p34_c001",
+          "hybrid_score": 0.7082799203617036,
+          "bm25_norm": 0.7082799203617036,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 34,
+          "text": "364 Derived Models a similarly weighted variant of the total document length: \u02dctf i = S\u2211 s=1 vs tf si (3.16) \u02dcdl = S\u2211 s=1 vs sl s (3.17) \u02dcavdl = average of \u02dcdl across documents wsimpleBM25F i = \u02dctf i k1 ( (1 \u2212 b)+ b \u02dcdl \u02dcavdl ) + \u02dctf i wRSJ i (3.18) However, we may also want to allow the parameters of BM25 to vary between streams \u2014 it may be that the di\ufb00erent streams have di\ufb00erent characteristics, e.g., in relation to verbosityv. scope (as de\ufb01ned in Section 3.4.5). It is in fact possible to re-arrange formula (3.15) so as to include any of the following in the stream-speci\ufb01c part: k 1, b, wRSJ",
+          "citation": "(bm25_prf.pdf p34, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p52_c001",
+          "hybrid_score": 0.029652436241300914,
+          "bm25_norm": 0.029652436241300914,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 52,
+          "text": "382 Parameter Optimisation in average document length from the unweighted to the weighted form: kBM25F 1 \u2248 kBM25 1 \u2211 s vsavsl s\u2211 s avsl s (5.1) 5.2.1 F actoring the Search A very useful technique for speeding up the search in practice is to factor the search into batches, optimising together only the parame- ters that are known to be strongly dependent. When doing this it is important to choose the initial parameters and the order of the batches judiciously. A typical schedule for BM25F may be: 1. Compute the optimal k 1 and b (ignoring streams). This is equivalent to setting all vs = 1 and al",
+          "citation": "(bm25_prf.pdf p52, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p12_c001",
+          "hybrid_score": 0.02926853248562041,
+          "bm25_norm": 0.02926853248562041,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 12,
+          "text": "342 Development of the Basic Model positive association is induced by relevance to the query. 4 This is clearly an over-simpli\ufb01cation, but perhaps not such a bad one. 3. Cooper [11] has demonstrated that we can arrive at the same transformation on the basis of a weaker assumption, called linked dependence. 5 This is essentially that the degree of sta- tistical association between the terms is the same in the rel- evant as in the non-relevant subsets. Again, this theoretical result may help to explain the robustness of such a model. We may represent the independence assumptions by means of a gr",
+          "citation": "(bm25_prf.pdf p12, chunk 1)"
+        },
+        {
+          "evidence_id": "bm25_prf_p39_c001",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "bm25_prf.pdf",
+          "page": 39,
+          "text": "3.9 Open Source Implementations of BM25 and BM25F 369 the PRF, since it models a di\ufb00erent distribution:P(D,Q |Rel) instead of the posterior P(Rel|D,Q). We end this section with a brief discussion of why position infor- mation may not be as important as it may seem at \ufb01rst view. It is sobering to see how hard it has been in the past to e\ufb00ectively use prox- imity in IR experiments. All the works referenced in this section claim statistically signi\ufb01cant improvements over non-positional baselines, but the improvements reported are small. We believe this is specially the case for small collections ",
+          "citation": "(bm25_prf.pdf p39, chunk 1)"
+        }
+      ],
+      "image_evidence": [],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "faithfulness_pass": true,
+      "answer": "364 Derived Models a similarly weighted variant of the total document length: \u02dctf i = S\u2211 s=1 vs tf si (3.16) \u02dcdl = S\u2211 s=1 vs sl s (3.17) \u02dcavdl = average of \u02dcdl across documents wsimpleBM25F i = \u02dctf i k1 ( (1 \u2212 b)+ b \u02dcdl \u02dcavdl ) + \u02dctf i wRSJ i (3.18) However, we may also want to allow the parameters of BM25 to vary between streams \u2014 it may be that the di\ufb00erent streams have di\ufb00erent characteristics, e.g., in relation to verbosityv. scope (as de\ufb01ned in Section 3.4.5). It is in fact possible to re-arrange formula (3.15) so as to include any of the following in the stream-speci\ufb01c part: k 1, b, wRSJ"
+    },
+    {
+      "question": "What metrics does RAGAS use to evaluate a RAG system (faithfulness, answer relevance, context relevance), and what do they mean?",
+      "top_k": 5,
+      "retrieval_mode": "Dense",
+      "use_multimodal": true,
+      "alpha": 0.25,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961518.814303,
+      "latency_ms": 101.46474838256836,
+      "evidence": [
+        {
+          "evidence_id": "rag_evaluation_ragas_p05_c003",
+          "hybrid_score": 1.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 1.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 5,
+          "text": "base- lines. For faithfulness, the Ragas prediction are in general highly accurate. For answer relevance, the agreement is lower, but this is largely due to the fact that the differences between the two candidate answers are often very subtle. We found context relevance to be the hardest quality dimension to evaluate. In particular, we observed that ChatGPT often struggles with the task of selecting the sen- tences from the context that are crucial, especially for longer contexts. 6 Conclusions We have highlighted the need for automated reference-free evaluation of RAG systems. In par- ticular",
+          "citation": "(rag_evaluation_ragas.pdf p5, chunk 3)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p03_c001",
+          "hybrid_score": 0.5604544871288958,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.5604544871288958,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 3,
+          "text": "we usually do not have access to human-annotated datasets or reference answers. We therefore fo- cus on metrics that are fully self-contained and reference-free. We focus in particular three quality aspects, which we argue are of central importance. First, Faithfulness refers to the idea that the an- swer should be grounded in the given context. This is important to avoid hallucinations, and to ensure that the retrieved context can act as a justification for the generated answer. Indeed, RAG systems are often used in applications where the factual con- sistency of the generated text w.r.t. the",
+          "citation": "(rag_evaluation_ragas.pdf p3, chunk 1)"
+        },
+        {
+          "evidence_id": "img_ragas_table1_metrics",
+          "hybrid_score": 0.41091806378561385,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.41091806378561385,
+          "source_file": "ragas_table1_metrics.png",
+          "page": 0,
+          "text": "ragas table1 metrics",
+          "citation": "(image: ragas_table1_metrics.png)"
+        },
+        {
+          "evidence_id": "gfm_rag_p07_c001",
+          "hybrid_score": 0.002156145524790036,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.002156145524790036,
+          "source_file": "gfm_rag.pdf",
+          "page": 7,
+          "text": "4 Experiment In experiments, we aim to address the following research questions: (1) How doesGFM-RAG perform in multi-hop retrieval and QA tasks? (Sections 4.2 and 4.3); (2) What are the efficiency and effectiveness of GFM-RAG in multi-hop retrieval? (Section 4.4); (3) How well does GFM-RAG generalize to unseen datasets as a foundation model? (Section 4.6); (4) How does the performance of GFM-RAG scale with training as a foundation model? (Section 4.7); (5) How to interpret GFM-RAG in multi-hop reasoning? (Section 4.8). 4.1 Experimental Setup Datasets. We first evaluate the effectiveness ofGFM",
+          "citation": "(gfm_rag.pdf p7, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p18_c002",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "gfm_rag.pdf",
+          "page": 18,
+          "text": "2 or 4 articles. In experiments, we adhere to the official data split to obtain the training samples and follow existing methods [64, 16] to use the same 1,000 samples from each validation set to avoid data leakage. We merge the candidate passages as the document corpus for KG-index construction. The statistics of the training and test data are presented in Table 5 and Table 6, respectively. B.2 Domain-specific RAG Datasets To test the generalizability of GFM-RAG, we evaluate it on seven domain-specific RAG datasets [10] including, (1) biomedical: PubMedQA [25]; (2) customer support: DelucionQ",
+          "citation": "(gfm_rag.pdf p18, chunk 2)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "rag_evaluation_ragas_p05_c003",
+          "hybrid_score": 1.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 1.0,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 5,
+          "text": "base- lines. For faithfulness, the Ragas prediction are in general highly accurate. For answer relevance, the agreement is lower, but this is largely due to the fact that the differences between the two candidate answers are often very subtle. We found context relevance to be the hardest quality dimension to evaluate. In particular, we observed that ChatGPT often struggles with the task of selecting the sen- tences from the context that are crucial, especially for longer contexts. 6 Conclusions We have highlighted the need for automated reference-free evaluation of RAG systems. In par- ticular",
+          "citation": "(rag_evaluation_ragas.pdf p5, chunk 3)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p03_c001",
+          "hybrid_score": 0.5604544871288958,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.5604544871288958,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 3,
+          "text": "we usually do not have access to human-annotated datasets or reference answers. We therefore fo- cus on metrics that are fully self-contained and reference-free. We focus in particular three quality aspects, which we argue are of central importance. First, Faithfulness refers to the idea that the an- swer should be grounded in the given context. This is important to avoid hallucinations, and to ensure that the retrieved context can act as a justification for the generated answer. Indeed, RAG systems are often used in applications where the factual con- sistency of the generated text w.r.t. the",
+          "citation": "(rag_evaluation_ragas.pdf p3, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p07_c001",
+          "hybrid_score": 0.002156145524790036,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.002156145524790036,
+          "source_file": "gfm_rag.pdf",
+          "page": 7,
+          "text": "4 Experiment In experiments, we aim to address the following research questions: (1) How doesGFM-RAG perform in multi-hop retrieval and QA tasks? (Sections 4.2 and 4.3); (2) What are the efficiency and effectiveness of GFM-RAG in multi-hop retrieval? (Section 4.4); (3) How well does GFM-RAG generalize to unseen datasets as a foundation model? (Section 4.6); (4) How does the performance of GFM-RAG scale with training as a foundation model? (Section 4.7); (5) How to interpret GFM-RAG in multi-hop reasoning? (Section 4.8). 4.1 Experimental Setup Datasets. We first evaluate the effectiveness ofGFM",
+          "citation": "(gfm_rag.pdf p7, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p18_c002",
+          "hybrid_score": 0.0,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.0,
+          "source_file": "gfm_rag.pdf",
+          "page": 18,
+          "text": "2 or 4 articles. In experiments, we adhere to the official data split to obtain the training samples and follow existing methods [64, 16] to use the same 1,000 samples from each validation set to avoid data leakage. We merge the candidate passages as the document corpus for KG-index construction. The statistics of the training and test data are presented in Table 5 and Table 6, respectively. B.2 Domain-specific RAG Datasets To test the generalizability of GFM-RAG, we evaluate it on seven domain-specific RAG datasets [10] including, (1) biomedical: PubMedQA [25]; (2) customer support: DelucionQ",
+          "citation": "(gfm_rag.pdf p18, chunk 2)"
+        }
+      ],
+      "image_evidence": [
+        {
+          "evidence_id": "img_ragas_table1_metrics",
+          "hybrid_score": 0.41091806378561385,
+          "bm25_norm": 0.0,
+          "dense_norm": 0.41091806378561385,
+          "source_file": "ragas_table1_metrics.png",
+          "page": 0,
+          "text": "ragas table1 metrics",
+          "citation": "(image: ragas_table1_metrics.png)"
+        }
+      ],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "faithfulness_pass": true,
+      "answer": "base- lines. For faithfulness, the Ragas prediction are in general highly accurate. For answer relevance, the agreement is lower, but this is largely due to the fact that the differences between the two candidate answers are often very subtle. We found context relevance to be the hardest quality dimension to evaluate. In particular, we observed that ChatGPT often struggles with the task of selecting the sen- tences from the context that are crucial, especially for longer contexts. 6 Conclusions We have highlighted the need for automated reference-free evaluation of RAG systems. In par- ticular"
+    },
+    {
+      "question": "What is Chain-of-Retrieval Augmented Generation and why does multi-step retrieval help?",
+      "top_k": 5,
+      "retrieval_mode": "Hybrid",
+      "use_multimodal": true,
+      "alpha": 0.55,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961593.296468,
+      "latency_ms": 106.02784156799316,
+      "evidence": [
+        {
+          "evidence_id": "chain_of_retrieval_p03_c001",
+          "hybrid_score": 0.7318179588594828,
+          "bm25_norm": 0.4040399085766282,
+          "dense_norm": 1.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 3,
+          "text": "providing responses that are both up-to-date and grounded. The relevance and quality of the retrieved information are pivotal for the ef\ufb01cacy of RAG systems. A substantial body of recent research has concentrated on developing better general-purpose text embeddings [ 18, 35]. Nevertheless, text embeddings frequently face limitations in addressing complex queries due to their reliance on \ufb01xed-size vector representations for ef\ufb01ciency purposes. To mitigate this constraint, contemporary research has extended the conventional paradigm of a single retrieval step followed by generation, advancing to",
+          "citation": "(chain_of_retrieval.pdf p3, chunk 1)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p01_c001",
+          "hybrid_score": 0.558603752813241,
+          "bm25_norm": 0.29066917302480744,
+          "dense_norm": 0.7778229544583231,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 1,
+          "text": "Ragas: Automated Evaluation of Retrieval Augmented Generation Shahul Es\u2020, Jithin James \u2020, Luis Espinosa-Anke \u2217\u2662, Steven Schockaert \u2217 \u2020Exploding Gradients \u2217CardiffNLP, Cardiff University, United Kingdom \u2662AMPLYFI, United Kingdom shahules786@gmail.com,jamesjithin97@gmail.com {espinosa-ankel,schockaerts1}@cardiff.ac.uk Abstract We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval Aug- mented Generation (RAG) pipelines. RAG systems are composed of a retrieval and an LLM based generation module, and provide LLMs with knowledge from a ",
+          "citation": "(rag_evaluation_ragas.pdf p1, chunk 1)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p09_c001",
+          "hybrid_score": 0.5573844219033055,
+          "bm25_norm": 0.8917988154130846,
+          "dense_norm": 0.2837726453953045,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 9,
+          "text": "5.3 Does Chain-of-Retrieval Always Help? 2 4 6 8 10 Chain Length 90 91 92 93 94 95EM FEVER greedy best-of-4 best-of-8 2 4 6 8 10 Chain Length 87 88 89 90 91EM TQA greedy best-of-4 best-of-8 2 4 6 8 10 Chain Length 59 60 61 62 63 64 65 66Accuracy NQ greedy best-of-4 best-of-8 Figure 4: Scaling test-time compute across three datasets from the KILT benchmark. We report scores on the public validation set. Multi-hop QA datasets are speci\ufb01cally designed to evaluate complex reasoning capabilities and are expected to bene\ufb01t from the chain-of-retrieval mechanism. Table 1 presents empirical evidence su",
+          "citation": "(chain_of_retrieval.pdf p9, chunk 1)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p01_c001",
+          "hybrid_score": 0.5175475062984644,
+          "bm25_norm": 0.4684070634514995,
+          "dense_norm": 0.5577533231732537,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 1,
+          "text": "Chain-of-Retrieval Augmented Generation Liang Wang\u2020\u2217 Haonan Chen\u2021 Nan Yang\u2020 Xiaolong Huang\u2020 Zhicheng Dou\u2021 Furu Wei\u2020 \u2020Microsoft Research \u2021Renmin University of China https://aka.ms/GeneralAI Abstract This paper introduces an approach for training o1-like RAG models that retrieve and reason over relevant information step by step before generating the \ufb01nal answer. Conventional RAG methods usually perform a single retrieval step before the generation process, which limits their effectiveness in addressing complex queries due to imperfect retrieval results. In contrast, our proposed method, CoRAG (C",
+          "citation": "(chain_of_retrieval.pdf p1, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p19_c003",
+          "hybrid_score": 0.4971111582518538,
+          "bm25_norm": 0.34478814157062726,
+          "dense_norm": 0.6217390809910393,
+          "source_file": "gfm_rag.pdf",
+          "page": 19,
+          "text": "designed to conduct multi-hop reasoning by iteratively retrieving and reasoning over documents, which can be integrated with arbitrary retrieval methods. \u2022 Adaptive-RAG [23] proposes an adaptive multi-step retrieval method that can dynamically select the most suitable retrieval strategy based on the complexity of the query. \u2022 FLARE [24] introduces a multi-step retrieval method that actively decide when and how to retrieve documents. It also predicts the future content to the guide the retrieval in next steps. \u2022 IRCoT [64] is a powerful multi-step retrieval pipeline that integrates the retrieva",
+          "citation": "(gfm_rag.pdf p19, chunk 3)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "chain_of_retrieval_p03_c001",
+          "hybrid_score": 0.7318179588594828,
+          "bm25_norm": 0.4040399085766282,
+          "dense_norm": 1.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 3,
+          "text": "providing responses that are both up-to-date and grounded. The relevance and quality of the retrieved information are pivotal for the ef\ufb01cacy of RAG systems. A substantial body of recent research has concentrated on developing better general-purpose text embeddings [ 18, 35]. Nevertheless, text embeddings frequently face limitations in addressing complex queries due to their reliance on \ufb01xed-size vector representations for ef\ufb01ciency purposes. To mitigate this constraint, contemporary research has extended the conventional paradigm of a single retrieval step followed by generation, advancing to",
+          "citation": "(chain_of_retrieval.pdf p3, chunk 1)"
+        },
+        {
+          "evidence_id": "rag_evaluation_ragas_p01_c001",
+          "hybrid_score": 0.558603752813241,
+          "bm25_norm": 0.29066917302480744,
+          "dense_norm": 0.7778229544583231,
+          "source_file": "rag_evaluation_ragas.pdf",
+          "page": 1,
+          "text": "Ragas: Automated Evaluation of Retrieval Augmented Generation Shahul Es\u2020, Jithin James \u2020, Luis Espinosa-Anke \u2217\u2662, Steven Schockaert \u2217 \u2020Exploding Gradients \u2217CardiffNLP, Cardiff University, United Kingdom \u2662AMPLYFI, United Kingdom shahules786@gmail.com,jamesjithin97@gmail.com {espinosa-ankel,schockaerts1}@cardiff.ac.uk Abstract We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval Aug- mented Generation (RAG) pipelines. RAG systems are composed of a retrieval and an LLM based generation module, and provide LLMs with knowledge from a ",
+          "citation": "(rag_evaluation_ragas.pdf p1, chunk 1)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p09_c001",
+          "hybrid_score": 0.5573844219033055,
+          "bm25_norm": 0.8917988154130846,
+          "dense_norm": 0.2837726453953045,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 9,
+          "text": "5.3 Does Chain-of-Retrieval Always Help? 2 4 6 8 10 Chain Length 90 91 92 93 94 95EM FEVER greedy best-of-4 best-of-8 2 4 6 8 10 Chain Length 87 88 89 90 91EM TQA greedy best-of-4 best-of-8 2 4 6 8 10 Chain Length 59 60 61 62 63 64 65 66Accuracy NQ greedy best-of-4 best-of-8 Figure 4: Scaling test-time compute across three datasets from the KILT benchmark. We report scores on the public validation set. Multi-hop QA datasets are speci\ufb01cally designed to evaluate complex reasoning capabilities and are expected to bene\ufb01t from the chain-of-retrieval mechanism. Table 1 presents empirical evidence su",
+          "citation": "(chain_of_retrieval.pdf p9, chunk 1)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p01_c001",
+          "hybrid_score": 0.5175475062984644,
+          "bm25_norm": 0.4684070634514995,
+          "dense_norm": 0.5577533231732537,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 1,
+          "text": "Chain-of-Retrieval Augmented Generation Liang Wang\u2020\u2217 Haonan Chen\u2021 Nan Yang\u2020 Xiaolong Huang\u2020 Zhicheng Dou\u2021 Furu Wei\u2020 \u2020Microsoft Research \u2021Renmin University of China https://aka.ms/GeneralAI Abstract This paper introduces an approach for training o1-like RAG models that retrieve and reason over relevant information step by step before generating the \ufb01nal answer. Conventional RAG methods usually perform a single retrieval step before the generation process, which limits their effectiveness in addressing complex queries due to imperfect retrieval results. In contrast, our proposed method, CoRAG (C",
+          "citation": "(chain_of_retrieval.pdf p1, chunk 1)"
+        },
+        {
+          "evidence_id": "gfm_rag_p19_c003",
+          "hybrid_score": 0.4971111582518538,
+          "bm25_norm": 0.34478814157062726,
+          "dense_norm": 0.6217390809910393,
+          "source_file": "gfm_rag.pdf",
+          "page": 19,
+          "text": "designed to conduct multi-hop reasoning by iteratively retrieving and reasoning over documents, which can be integrated with arbitrary retrieval methods. \u2022 Adaptive-RAG [23] proposes an adaptive multi-step retrieval method that can dynamically select the most suitable retrieval strategy based on the complexity of the query. \u2022 FLARE [24] introduces a multi-step retrieval method that actively decide when and how to retrieve documents. It also predicts the future content to the guide the retrieval in next steps. \u2022 IRCoT [64] is a powerful multi-step retrieval pipeline that integrates the retrieva",
+          "citation": "(gfm_rag.pdf p19, chunk 3)"
+        }
+      ],
+      "image_evidence": [],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "faithfulness_pass": true,
+      "answer": "Chain-of-Retrieval Augmented Generation Liang Wang\u2020\u2217 Haonan Chen\u2021 Nan Yang\u2020 Xiaolong Huang\u2020 Zhicheng Dou\u2021 Furu Wei\u2020 \u2020Microsoft Research \u2021Renmin University of China https://aka.ms/GeneralAI Abstract This paper introduces an approach for training o1-like RAG models that retrieve and reason over relevant information step by step before generating the \ufb01nal answer. Conventional RAG methods usually perform a single retrieval step before the generation process, which limits their effectiveness in addressing complex queries due to imperfect retrieval results. In contrast, our proposed method, CoRAG (C"
+    },
+    {
+      "question": "What is the GraphFlow as it relates to RAG and what is its architecture?",
+      "top_k": 5,
+      "retrieval_mode": "Hybrid",
+      "use_multimodal": true,
+      "alpha": 0.55,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961749.6643944,
+      "latency_ms": 96.60458564758301,
+      "evidence": [
+        {
+          "evidence_id": "img_graphflow_rag_p04_architecture",
+          "hybrid_score": 0.55,
+          "bm25_norm": 0.0,
+          "dense_norm": 1.0,
+          "source_file": "graphflow_rag_p04_architecture.png",
+          "page": 0,
+          "text": "graphflow rag p04 architecture",
+          "citation": "(image: graphflow_rag_p04_architecture.png)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p01_c002",
+          "hybrid_score": 0.5025711239756476,
+          "bm25_norm": 0.9454676241789414,
+          "dense_norm": 0.1402012601729527,
+          "source_file": "graphflow_rag.pdf",
+          "page": 1,
+          "text": "results. We evaluate GraphFlow on STaRK benchmark, which includes real-world queries from multiple domains over text-rich KGs. GraphFlow outperforms strong KG-based RAG baselines including GPT-4o by 10% perfor- mance gain on both retrieval accuracy and diversity metrics. GraphFlow also shows strong generalization by effectively retrieving information from unseen KGs to support new-domain queries, highlighting its effectiveness and robustness 2. 1 Introduction Retrieval-Augmented Generation (RAG) [36] has emerged as a promising framework to reduce the hallucination of Large Language Models (LLM",
+          "citation": "(graphflow_rag.pdf p1, chunk 2)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p06_c003",
+          "hybrid_score": 0.4536656635517261,
+          "bm25_norm": 0.8464639852634548,
+          "dense_norm": 0.13228521851485733,
+          "source_file": "graphflow_rag.pdf",
+          "page": 6,
+          "text": "actions in Eq. 7. Hence, Eq. 7 can also be applied for the terminal state. If the policy chooses to retrieve the current document (i.e., selects the self-loop), the trajectory is terminated, indicating that the current document is relevant to the query. Otherwise, the policy continues to explore the KG. This mechanism enables the agent to adaptively determine when to stop retrieval based on its experience, rather than relying on a fixed number of steps. Difference Between GraphFlow, SFT, and PRM . SFT and PRM learn the retrieval policy by treating the action leading to the ground-truth next st",
+          "citation": "(graphflow_rag.pdf p6, chunk 3)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p19_c001",
+          "hybrid_score": 0.44999999999999996,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Table 11: Examples from the validation set of the HotpotQA dataset. For conciseness, all retrieved documents at each step are omitted. Correct answers are highlighted in blue, while incorrect answers are highlighted in red. Query:What wrestling team is Mathew Thomas Rehwoldt a part of? RAG without Chain-of-Retrieval Final Answer:WWE\u0017 CoRAG (Ours) Sub-query 1: What is Mathew Thomas Rehwoldt\u2019s profession? Sub-answer 1: No relevant information found. Sub-query 2: What is Mathew Thomas Rehwoldt\u2019s name in the wrestling industry? Sub-answer 2: Aiden English Sub-query 3: What wrestling team is Aiden ",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 1)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p09_c001",
+          "hybrid_score": 0.4291624947335221,
+          "bm25_norm": 0.9536944327411603,
+          "dense_norm": 0.0,
+          "source_file": "graphflow_rag.pdf",
+          "page": 9,
+          "text": "methods. Overall, retriever-based methods remain more lightweight but trail behind agent-based approaches in retrieval accuracy. Diversity. Table 2 reports the retrieval diversity of different KG-based RAG methods on the STaRK benchmark. We evaluate both Recall@20 (R@20) and its de-duplicated variant (D-R@20), which better captures retrieval diversity. GraphFlow achieves the highest retrieval diversity across all datasets, outperforming both retriever-based and agent-based baselines. Its results not only match more ground-truth contents but also avoid redundancy. Notably, GraphFlow exceeds the",
+          "citation": "(graphflow_rag.pdf p9, chunk 1)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "graphflow_rag_p01_c002",
+          "hybrid_score": 0.5025711239756476,
+          "bm25_norm": 0.9454676241789414,
+          "dense_norm": 0.1402012601729527,
+          "source_file": "graphflow_rag.pdf",
+          "page": 1,
+          "text": "results. We evaluate GraphFlow on STaRK benchmark, which includes real-world queries from multiple domains over text-rich KGs. GraphFlow outperforms strong KG-based RAG baselines including GPT-4o by 10% perfor- mance gain on both retrieval accuracy and diversity metrics. GraphFlow also shows strong generalization by effectively retrieving information from unseen KGs to support new-domain queries, highlighting its effectiveness and robustness 2. 1 Introduction Retrieval-Augmented Generation (RAG) [36] has emerged as a promising framework to reduce the hallucination of Large Language Models (LLM",
+          "citation": "(graphflow_rag.pdf p1, chunk 2)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p06_c003",
+          "hybrid_score": 0.4536656635517261,
+          "bm25_norm": 0.8464639852634548,
+          "dense_norm": 0.13228521851485733,
+          "source_file": "graphflow_rag.pdf",
+          "page": 6,
+          "text": "actions in Eq. 7. Hence, Eq. 7 can also be applied for the terminal state. If the policy chooses to retrieve the current document (i.e., selects the self-loop), the trajectory is terminated, indicating that the current document is relevant to the query. Otherwise, the policy continues to explore the KG. This mechanism enables the agent to adaptively determine when to stop retrieval based on its experience, rather than relying on a fixed number of steps. Difference Between GraphFlow, SFT, and PRM . SFT and PRM learn the retrieval policy by treating the action leading to the ground-truth next st",
+          "citation": "(graphflow_rag.pdf p6, chunk 3)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p19_c001",
+          "hybrid_score": 0.44999999999999996,
+          "bm25_norm": 1.0,
+          "dense_norm": 0.0,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 19,
+          "text": "Table 11: Examples from the validation set of the HotpotQA dataset. For conciseness, all retrieved documents at each step are omitted. Correct answers are highlighted in blue, while incorrect answers are highlighted in red. Query:What wrestling team is Mathew Thomas Rehwoldt a part of? RAG without Chain-of-Retrieval Final Answer:WWE\u0017 CoRAG (Ours) Sub-query 1: What is Mathew Thomas Rehwoldt\u2019s profession? Sub-answer 1: No relevant information found. Sub-query 2: What is Mathew Thomas Rehwoldt\u2019s name in the wrestling industry? Sub-answer 2: Aiden English Sub-query 3: What wrestling team is Aiden ",
+          "citation": "(chain_of_retrieval.pdf p19, chunk 1)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p09_c001",
+          "hybrid_score": 0.4291624947335221,
+          "bm25_norm": 0.9536944327411603,
+          "dense_norm": 0.0,
+          "source_file": "graphflow_rag.pdf",
+          "page": 9,
+          "text": "methods. Overall, retriever-based methods remain more lightweight but trail behind agent-based approaches in retrieval accuracy. Diversity. Table 2 reports the retrieval diversity of different KG-based RAG methods on the STaRK benchmark. We evaluate both Recall@20 (R@20) and its de-duplicated variant (D-R@20), which better captures retrieval diversity. GraphFlow achieves the highest retrieval diversity across all datasets, outperforming both retriever-based and agent-based baselines. Its results not only match more ground-truth contents but also avoid redundancy. Notably, GraphFlow exceeds the",
+          "citation": "(graphflow_rag.pdf p9, chunk 1)"
+        }
+      ],
+      "image_evidence": [
+        {
+          "evidence_id": "img_graphflow_rag_p04_architecture",
+          "hybrid_score": 0.55,
+          "bm25_norm": 0.0,
+          "dense_norm": 1.0,
+          "source_file": "graphflow_rag_p04_architecture.png",
+          "page": 0,
+          "text": "graphflow rag p04 architecture",
+          "citation": "(image: graphflow_rag_p04_architecture.png)"
+        }
+      ],
+      "missing_evidence_behavior": false,
+      "support_gate_pass": true,
+      "faithfulness_pass": true,
+      "answer": "results. We evaluate GraphFlow on STaRK benchmark, which includes real-world queries from multiple domains over text-rich KGs. GraphFlow outperforms strong KG-based RAG baselines including GPT-4o by 10% perfor- mance gain on both retrieval accuracy and diversity metrics. GraphFlow also shows strong generalization by effectively retrieving information from unseen KGs to support new-domain queries, highlighting its effectiveness and robustness 2. 1 Introduction Retrieval-Augmented Generation (RAG) [36] has emerged as a promising framework to reduce the hallucination of Large Language Models (LLM"
+    },
+    {
+      "question": "What are the economic impacts of climate change?\"",
+      "top_k": 5,
+      "retrieval_mode": "Hybrid",
+      "use_multimodal": true,
+      "alpha": 0.55,
+      "p_at_5": null,
+      "r_at_10": null,
+      "timestamp": 1770961845.648802,
+      "latency_ms": 97.48315811157227,
+      "evidence": [
+        {
+          "evidence_id": "gfm_rag_p32_c003",
+          "hybrid_score": 0.8462290458348876,
+          "bm25_norm": 0.6582867685219722,
+          "dense_norm": 1.0,
+          "source_file": "gfm_rag.pdf",
+          "page": 32,
+          "text": "performed. \u2022 If the authors answer NA or No, they should explain why their work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact specific groups), privacy considerations, and security considerations. 32",
+          "citation": "(gfm_rag.pdf p32, chunk 3)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p21_c002",
+          "hybrid_score": 0.801072528072843,
+          "bm25_norm": 0.8519748277147796,
+          "dense_norm": 0.7594251920021676,
+          "source_file": "graphflow_rag.pdf",
+          "page": 21,
+          "text": "negative societal impacts of the work performed? Answer: [Yes] Justification: The broader impacts are discussed in Supplementary Material. Guidelines: \u2022 The answer NA means that there is no societal impact of the work performed. \u2022 If the authors answer NA or No, they should explain why their work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make dec",
+          "citation": "(graphflow_rag.pdf p21, chunk 2)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p25_c003",
+          "hybrid_score": 0.7958908839978805,
+          "bm25_norm": 0.6481659087837467,
+          "dense_norm": 0.9167567728094446,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 25,
+          "text": "work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake pro\ufb01les, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact speci\ufb01c groups), privacy considerations, and security considerations. 25",
+          "citation": "(chain_of_retrieval.pdf p25, chunk 3)"
+        },
+        {
+          "evidence_id": "gfm_rag_p32_c002",
+          "hybrid_score": 0.6327520927777308,
+          "bm25_norm": 0.9935397306794537,
+          "dense_norm": 0.33756220722177593,
+          "source_file": "gfm_rag.pdf",
+          "page": 32,
+          "text": "provide the amount of compute required for each of the individual experimental runs as well as estimate the total compute. \u2022 The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn\u2019t make it into the paper). 9. Code of ethics Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines? Answer: [Yes] Justification: The research conducted in the paper complies with the NeurIPS Code of E",
+          "citation": "(gfm_rag.pdf p32, chunk 2)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p25_c002",
+          "hybrid_score": 0.620135993608405,
+          "bm25_norm": 0.9875006233684785,
+          "dense_norm": 0.31956493289561744,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 25,
+          "text": "amount of compute required for each of the individual experimental runs as well as estimate the total compute. \u2022 The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn\u2019t make it into the paper). 9. Code of ethics Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines? Answer: [Yes] Justi\ufb01cation: We have reviewed the NeurIPS Code of Ethics and our work conforms to it. Guidelines:",
+          "citation": "(chain_of_retrieval.pdf p25, chunk 2)"
+        }
+      ],
+      "text_evidence": [
+        {
+          "evidence_id": "gfm_rag_p32_c003",
+          "hybrid_score": 0.8462290458348876,
+          "bm25_norm": 0.6582867685219722,
+          "dense_norm": 1.0,
+          "source_file": "gfm_rag.pdf",
+          "page": 32,
+          "text": "performed. \u2022 If the authors answer NA or No, they should explain why their work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact specific groups), privacy considerations, and security considerations. 32",
+          "citation": "(gfm_rag.pdf p32, chunk 3)"
+        },
+        {
+          "evidence_id": "graphflow_rag_p21_c002",
+          "hybrid_score": 0.801072528072843,
+          "bm25_norm": 0.8519748277147796,
+          "dense_norm": 0.7594251920021676,
+          "source_file": "graphflow_rag.pdf",
+          "page": 21,
+          "text": "negative societal impacts of the work performed? Answer: [Yes] Justification: The broader impacts are discussed in Supplementary Material. Guidelines: \u2022 The answer NA means that there is no societal impact of the work performed. \u2022 If the authors answer NA or No, they should explain why their work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make dec",
+          "citation": "(graphflow_rag.pdf p21, chunk 2)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p25_c003",
+          "hybrid_score": 0.7958908839978805,
+          "bm25_norm": 0.6481659087837467,
+          "dense_norm": 0.9167567728094446,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 25,
+          "text": "work has no societal impact or why the paper does not address societal impact. \u2022 Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake pro\ufb01les, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact speci\ufb01c groups), privacy considerations, and security considerations. 25",
+          "citation": "(chain_of_retrieval.pdf p25, chunk 3)"
+        },
+        {
+          "evidence_id": "gfm_rag_p32_c002",
+          "hybrid_score": 0.6327520927777308,
+          "bm25_norm": 0.9935397306794537,
+          "dense_norm": 0.33756220722177593,
+          "source_file": "gfm_rag.pdf",
+          "page": 32,
+          "text": "provide the amount of compute required for each of the individual experimental runs as well as estimate the total compute. \u2022 The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn\u2019t make it into the paper). 9. Code of ethics Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines? Answer: [Yes] Justification: The research conducted in the paper complies with the NeurIPS Code of E",
+          "citation": "(gfm_rag.pdf p32, chunk 2)"
+        },
+        {
+          "evidence_id": "chain_of_retrieval_p25_c002",
+          "hybrid_score": 0.620135993608405,
+          "bm25_norm": 0.9875006233684785,
+          "dense_norm": 0.31956493289561744,
+          "source_file": "chain_of_retrieval.pdf",
+          "page": 25,
+          "text": "amount of compute required for each of the individual experimental runs as well as estimate the total compute. \u2022 The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn\u2019t make it into the paper). 9. Code of ethics Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines? Answer: [Yes] Justi\ufb01cation: We have reviewed the NeurIPS Code of Ethics and our work conforms to it. Guidelines:",
+          "citation": "(chain_of_retrieval.pdf p25, chunk 2)"
+        }
+      ],
+      "image_evidence": [],
+      "missing_evidence_behavior": true,
+      "support_gate_pass": false,
+      "faithfulness_pass": false,
+      "answer": "Not enough evidence in the retrieved context."
     }
   ]
 }

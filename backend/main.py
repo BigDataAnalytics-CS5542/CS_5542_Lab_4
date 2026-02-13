@@ -46,8 +46,8 @@ def log_results(userID, results):
     save_history()
 
 
-def run_query(userID, query, top_k, alpha):
-    results = run_hybrid_query(question=query, top_k=top_k, alpha=alpha)
+def run_query(userID, query, top_k, retrieval_mode, alpha):
+    results = run_hybrid_query(question=query, top_k=top_k, retrieval_mode=retrieval_mode, alpha=alpha)
     log_results(userID=userID, results=results)
     process_json_to_csv(results)
     return results
@@ -59,5 +59,5 @@ def history_hook(userID:str) -> list[Dict[str,Any]]:
     return get_history(userID=userID)
 
 @app.post("/query")
-def query(query:str, top_k:int, alpha:float, userID:str="null") :
-    return run_query(userID=userID, query=query, top_k=top_k, alpha=alpha)
+def query(query:str, top_k:int, retrieval_mode:str, alpha:float, userID:str="null") :
+    return run_query(userID=userID, query=query, top_k=top_k, retrieval_mode=retrieval_mode, alpha=alpha)
